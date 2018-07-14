@@ -153,6 +153,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-itcast_01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/14/itcast_01/">关于重装系统之后恢复github的操作</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/14/itcast_01/" class="archive-article-date">
+  	<time datetime="2018-07-14T08:41:18.997Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>生活中，总是遇到各种问题，然后重装系统。可是重装后，电脑里的github各项配置没啦，每次在重新配置急需要半天，很烦。所以就记录一下本次配置内容，以便自己备用，也方便新手学习。此文是针对于windows环境下node.js+github搭建，并且提前将自己的本地仓库拷贝出去的博客。</p>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>因为我们之前已经配置过github，在重装系统之后，我们拷出的本地仓库配置并没有变化，只是少了与node.js的关联，此时，我们只需要将node.js关联一下即可。</p>
+<p>1.首先要安装git,这里就不多说了，默认大家都已安装完毕。</p>
+<p>2.其次，安装node.js。这里跟之间的一样。</p>
+<p>3.将本地仓库放在磁盘的根目录下（我的仓库名为hexo），我们在自己的本地仓库位置（E:\hexo）打开终端Git Bash Here,此时已从终端进入你的仓库位置</p>
+<p>4.我们用cd blog 进入了E:\hexo\blog目录，由于我们的本地仓库以前已经配制过，这时我们只需要在E:\hexo\blog目录敲：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>此时，你的桌面会弹出一个来自node.js的询问窗口，点击允许访问，此时我们在浏览器输入<a href="http://localhost:4000访问本地git，这时已经能进去了。这时，我们需要执行行这段脚本（$" target="_blank" rel="noopener">http://localhost:4000访问本地git，这时已经能进去了。这时，我们需要执行行这段脚本（$</a> ./deploy.sh），我们发现已经可以把东西上传上去了。</p>
+<p>如果没有上传，我们查看一下环境变量，在path中写入E:\hexo\node_modules\hexo\bin<br>此时，在重复上述操作即可。</p>
+<p>配置用户名和用户邮件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"you@example.com"</span></span><br><span class="line">git config --global user.name <span class="string">"Your Name"</span></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/14/itcast_01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python_day02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
