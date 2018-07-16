@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="老阳的技术博客">
 <meta property="og:description" content="7、控制语句1）条件语句123456789101112131415161718单判断：if 条件:   代码双分支：if 条件：   代码else:   代码多分支：if 条件：   代码elif 条件：   代码elif 条件：   代码...else:   代码 2）逻辑运算符： and、or、notand:左右两端都是布尔型，其结果也为布尔型.当左右两端的值都为True，其结果才为True，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-14T00:50:46.855Z">
+<meta property="og:updated_time" content="2018-07-16T11:53:40.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础02">
 <meta name="twitter:description" content="7、控制语句1）条件语句123456789101112131415161718单判断：if 条件:   代码双分支：if 条件：   代码else:   代码多分支：if 条件：   代码elif 条件：   代码elif 条件：   代码...else:   代码 2）逻辑运算符： and、or、notand:左右两端都是布尔型，其结果也为布尔型.当左右两端的值都为True，其结果才为True，">
@@ -243,6 +243,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (1,2,3)</span><br><span class="line">list1 = list(tuple1)</span><br></pre></td></tr></table></figure>
 <p>列表转为元组</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1,2,3]</span><br><span class="line">tuple1 = tuple(list1)</span><br></pre></td></tr></table></figure>
+<h4 id="请描述unicode-utf-8-gbk等编码之间的关系？"><a href="#请描述unicode-utf-8-gbk等编码之间的关系？" class="headerlink" title="请描述unicode,utf-8,gbk等编码之间的关系？"></a>请描述unicode,utf-8,gbk等编码之间的关系？</h4><p>(1)Unicode编码是计算机所能识别的字节编码格式，所有格式的编码都需要最终转换为Unicode编码。<br>(2)utf-8编码是目前互联网进行数据传递，内容展现的通用编码格式，它解决了因为操作系统编码格式不同的问题，导致在不同系统中无法正确显示内容的情况。<br>(3)gbk编码是中文编码，主要用来在中文操作系统上正确显示中文内容的编码集。<br>它们三个都是编码格式，其中utf-8与Gbk最终都要解释成Unicode编码后，进行执行，同时，在现在的互联网应用中，为了统一编码格式，进行正确的内容展现，我们通过对文件的编码使用utf-8来代替gbk，这样解决了操作系统出现乱码的情况。</p>
 
       
 
