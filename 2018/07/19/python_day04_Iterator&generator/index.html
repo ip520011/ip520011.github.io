@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>基本数据类型--整型 | 老阳的技术博客</title>
+  <title>高级特性 | 老阳的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常见的数据类型：12345$ 整型$ 浮点型$ 布尔型$ 复数型$ 字符串型 我们工作中常用到整型、字符串. 整型我们通常根据计算机中数据编码格式，将整型分为：二进制、八进制、十进制、十六进制四种类型. 1 进制间的转换:二进制转十进制：12$ bin(int)  将十进制转为二进制   $ int(bin)  将二进制转为十进制 八进制转十进制：12$ oct(int)  将十进制转为八进制">
+  <meta name="description" content="1 range()range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。 2 列表推导式生成式格式：[表达式或函数  for x in 序列]含义：通过生成式中的循环，逐一产生x值，表达式使用X值进行相关运算。最终结果作为列表的元素。也就意味着，循环多少次，就会产生多少个相关元素。 3 迭代器（Iterator）1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续">
 <meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基本数据类型--整型">
-<meta property="og:url" content="http://yoursite.com/2018/07/19/python_day01_int/index.html">
+<meta property="og:title" content="高级特性">
+<meta property="og:url" content="http://yoursite.com/2018/07/19/python_day04_Iterator&generator/index.html">
 <meta property="og:site_name" content="老阳的技术博客">
-<meta property="og:description" content="常见的数据类型：12345$ 整型$ 浮点型$ 布尔型$ 复数型$ 字符串型 我们工作中常用到整型、字符串. 整型我们通常根据计算机中数据编码格式，将整型分为：二进制、八进制、十进制、十六进制四种类型. 1 进制间的转换:二进制转十进制：12$ bin(int)  将十进制转为二进制   $ int(bin)  将二进制转为十进制 八进制转十进制：12$ oct(int)  将十进制转为八进制">
+<meta property="og:description" content="1 range()range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。 2 列表推导式生成式格式：[表达式或函数  for x in 序列]含义：通过生成式中的循环，逐一产生x值，表达式使用X值进行相关运算。最终结果作为列表的元素。也就意味着，循环多少次，就会产生多少个相关元素。 3 迭代器（Iterator）1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-19T05:03:22.833Z">
+<meta property="og:updated_time" content="2018-07-19T09:58:17.812Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基本数据类型--整型">
-<meta name="twitter:description" content="常见的数据类型：12345$ 整型$ 浮点型$ 布尔型$ 复数型$ 字符串型 我们工作中常用到整型、字符串. 整型我们通常根据计算机中数据编码格式，将整型分为：二进制、八进制、十进制、十六进制四种类型. 1 进制间的转换:二进制转十进制：12$ bin(int)  将十进制转为二进制   $ int(bin)  将二进制转为十进制 八进制转十进制：12$ oct(int)  将十进制转为八进制">
+<meta name="twitter:title" content="高级特性">
+<meta name="twitter:description" content="1 range()range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。 2 列表推导式生成式格式：[表达式或函数  for x in 序列]含义：通过生成式中的循环，逐一产生x值，表达式使用X值进行相关运算。最终结果作为列表的元素。也就意味着，循环多少次，就会产生多少个相关元素。 3 迭代器（Iterator）1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续">
   
     <link rel="alternative" href="/atom.xml" title="老阳的技术博客" type="application/atom+xml">
   
@@ -159,46 +159,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-python_day01_int" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python_day04_Iterator&amp;generator" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      基本数据类型--整型
+      高级特性
     </h1>
   
 
         
-        <a href="/2018/07/19/python_day01_int/" class="archive-article-date">
-  	<time datetime="2018-07-19T04:52:57.926Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
+        <a href="/2018/07/19/python_day04_Iterator&generator/" class="archive-article-date">
+  	<time datetime="2018-07-19T09:52:43.157Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="常见的数据类型："><a href="#常见的数据类型：" class="headerlink" title="常见的数据类型："></a>常见的数据类型：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ 整型</span><br><span class="line">$ 浮点型</span><br><span class="line">$ 布尔型</span><br><span class="line">$ 复数型</span><br><span class="line">$ 字符串型</span><br></pre></td></tr></table></figure>
-<p>我们工作中常用到整型、字符串.</p>
-<h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><p>我们通常根据计算机中数据编码格式，将整型分为：二进制、八进制、十进制、十六进制四种类型.</p>
-<h3 id="1-进制间的转换"><a href="#1-进制间的转换" class="headerlink" title="1 进制间的转换:"></a>1 进制间的转换:</h3><h4 id="二进制转十进制："><a href="#二进制转十进制：" class="headerlink" title="二进制转十进制："></a>二进制转十进制：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ bin(int)  将十进制转为二进制   </span><br><span class="line">$ int(bin)  将二进制转为十进制</span><br></pre></td></tr></table></figure>
-<h4 id="八进制转十进制："><a href="#八进制转十进制：" class="headerlink" title="八进制转十进制："></a>八进制转十进制：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ oct(int)  将十进制转为八进制   </span><br><span class="line">$ int(oct)  将八进制转为十进制</span><br></pre></td></tr></table></figure>
-<h4 id="十六进制转十进制："><a href="#十六进制转十进制：" class="headerlink" title="十六进制转十进制："></a>十六进制转十进制：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hex(int)  将十进制转为十六进制</span><br><span class="line">$ int(hex)  将十六进制转为十进制</span><br></pre></td></tr></table></figure>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>算术运算符：+、-、*、/</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在python中默认的数据类型时浮点型，因此在执行算术运算时5/2=2.5，而不是2.</span><br><span class="line">%：两数进行求余运算，如果分子大于分母，得余数；如果分子小于分母，直接得分子.注意：只有分子除尽分母时，结果才返回0.</span><br><span class="line">//：两数相除取整数，注意，此处得到的整数，为结果的整数部分不进行四舍五入操作.</span><br><span class="line">**：A ** B 数A连续相乘B次，也可以说数A的B次幂.</span><br></pre></td></tr></table></figure>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="1-对于数值运算的四舍五入操作"><a href="#1-对于数值运算的四舍五入操作" class="headerlink" title="1 对于数值运算的四舍五入操作"></a>1 对于数值运算的四舍五入操作</h3><p>math包中的floor()和ceil()函数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line">math.floor(3/2) =&gt;1   等同于 3//2    只舍不入</span><br><span class="line">math.ceil(3/2) =&gt;2    此处，只要有小数位就进位，不管小数部分是否大于等于5  只入不舍</span><br><span class="line">round()函数进行四舍五入操作，round(数值[,保留小数位数])</span><br><span class="line">round(1.5)=&gt;2  </span><br><span class="line">round(1.2)=&gt;1</span><br><span class="line">round(1,4,1)=&gt;1.4  意味着保留小数点后一位</span><br></pre></td></tr></table></figure>
-<h3 id="2-求幂运算"><a href="#2-求幂运算" class="headerlink" title="2 求幂运算"></a>2 求幂运算</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pow(2,3)</span><br><span class="line"></span><br><span class="line">8  等同于2**3</span><br></pre></td></tr></table></figure>
-<h3 id="3-求绝对值"><a href="#3-求绝对值" class="headerlink" title="3 求绝对值"></a>3 求绝对值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abs(-10)</span><br><span class="line"></span><br><span class="line">10</span><br></pre></td></tr></table></figure>
-<h3 id="4-求两数相除的商与余数"><a href="#4-求两数相除的商与余数" class="headerlink" title="4 求两数相除的商与余数"></a>4 求两数相除的商与余数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">divmod(5,3)</span><br><span class="line"></span><br><span class="line">(1,2)    类似5%3=&gt;2</span><br></pre></td></tr></table></figure>
-<h3 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5 运算符"></a>5 运算符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i = 10 </span><br><span class="line">i = i + 5  等同于  i+=5</span><br><span class="line">i = i - 5  等同于  i-=5</span><br><span class="line">i = i * 5  等同于  i*=5</span><br><span class="line">i = i / 5  等同于  i/=5</span><br><span class="line">i = i//5   等同于  i//=5</span><br><span class="line">i = i ** 2 等同于  i**=2</span><br><span class="line">i = i % 3  等同于  i%=3</span><br></pre></td></tr></table></figure>
-<h3 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h3><p>1、python中布尔型分为True和False两种，但是在实际操作中我们也可以将其与1和0等同.<br>2、布尔型常用在逻辑运算和判断条件中，作为结果来使用.但是也可以参与算术运算，当进行算术运算时，True作为1、False作为0参与运算.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = True     a + 1 =&gt; 2</span><br><span class="line">b = False    b + 1 =&gt;1</span><br><span class="line">a + b =&gt; 1</span><br></pre></td></tr></table></figure>
-<p>注意：<br>通常我们在python，不能将布尔型参与算术运算的.布尔型一般参加比较运算或逻辑运算，其返回值还是布尔型.<br>布尔型求非： not</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ a = True</span><br><span class="line">$ b = False</span><br><span class="line">$ not a</span><br><span class="line">$ not b</span><br><span class="line"></span><br><span class="line">False</span><br><span class="line">True</span><br></pre></td></tr></table></figure>
-<h3 id="精确的十进制"><a href="#精确的十进制" class="headerlink" title="精确的十进制"></a>精确的十进制</h3><p>在python中，我们通过阅读官方文档了解到，浮点数是一种近似值的表示，因此直接使用浮点数时常常出现精度丢失或不匹配情况发生.<br>python中提出了Decimal对象来进行解决，通过引入 import decimal生成一个decimal对象，将浮点数转换为decimal类型，可以支持完成对应的算术运算.<br>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ from decimal import Decimal   <span class="comment"># 引入decimal包中的Deciaml对象</span></span><br><span class="line">$ f1 = 12.4556</span><br><span class="line">$ f2 = 24.3</span><br><span class="line">$ c = Decimal.from_float(f1)    <span class="comment"># 将浮点数转换为decimal对象</span></span><br><span class="line">$ a = Decimal(f1).quantize(Decimal(<span class="string">'0.00'</span>)) <span class="comment">#将浮点数转换为decimal对象，同时指定该数值的精度，保留小数点后两位，并自动完成四舍五入.</span></span><br><span class="line">$ b = Decimal(f2).quantize(Decimal(<span class="string">'0.00'</span>))</span><br><span class="line">$ <span class="built_in">print</span>((a*b).quantize(Decimal(<span class="string">'0.00'</span>)))</span><br></pre></td></tr></table></figure>
+        <h2 id="1-range"><a href="#1-range" class="headerlink" title="1 range()"></a>1 range()</h2><p>range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。</p>
+<h2 id="2-列表推导式生成式"><a href="#2-列表推导式生成式" class="headerlink" title="2 列表推导式生成式"></a>2 列表推导式生成式</h2><p>格式：[表达式或函数  for x in 序列]<br>含义：通过生成式中的循环，逐一产生x值，表达式使用X值进行相关运算。最终结果作为列表的元素。也就意味着，循环多少次，就会产生多少个相关元素。</p>
+<h2 id="3-迭代器（Iterator）"><a href="#3-迭代器（Iterator）" class="headerlink" title="3 迭代器（Iterator）"></a>3 迭代器（Iterator）</h2><p>1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter()和next()。<br>iter()用来创建一个迭代器，next()用来访问下一个元素。<br>目前我们所学的字符串、列表、元组都可以创建迭代器，那么他们也是可迭代化的对象。<br>迭代器两个步骤：<br>1、当调用next()函数，会将迭代器当前位置状态进行改变<br>2、会将下一个元素进行返回</p>
+<h3 id="迭代器的延迟作用"><a href="#迭代器的延迟作用" class="headerlink" title="迭代器的延迟作用"></a>迭代器的延迟作用</h3><p>迭代器生成的元素并不是在迭代器声明时，就准备好了的。通常时在调用迭代器需要提供该元素时生成的，也就是说只有在我们需要的时候迭代器才产生相关元素，不需要时并不会主动的生成相关元素。我们可以把迭代器看成一个容器，到我们需要时使用next()方法返回容器中的下一个值。<br>迭代器实现了工厂模式的对象，它在你每次访问下一个值的时候给你返回。</p>
+<h3 id="可迭代化（iterable）"><a href="#可迭代化（iterable）" class="headerlink" title="可迭代化（iterable）"></a>可迭代化（iterable）</h3><p>表明相关的对象可以创建迭代器对象，同时他们自身都是可以进行for数据遍历的。我们可以使用isinstance()来判断对象是否为可迭代化</p>
+<p>from collections import Iterable<br>string = ‘hello’<br>print(isinstance(string, Iterable))  =&gt; True<br>函数格式：isinstance(对象，类型)<br>返回值：布尔值<br>结果：如果指定的对象属于指定的类型，那么返回True，反之返回False</p>
+<p>enumerate()函数<br>函数格式：enumerate(iterable)<br>返回值：生成一个枚举对象<br>例如：<br>enum = enumberate([‘one’,’two’,’three’])<br>for i in enum:<br>    print(i)</p>
+<p>(0, ‘one’)<br>(1, ‘two’)<br>(2, ‘three’)</p>
+<p>for i,value in enum:<br>    print(i, value)</p>
+<p>0 one<br>1 two<br>2 three</p>
+<h2 id="4-生成器"><a href="#4-生成器" class="headerlink" title="4 生成器"></a>4 生成器</h2><h3 id="1、创建方式"><a href="#1、创建方式" class="headerlink" title="1、创建方式"></a>1、创建方式</h3><p>第一种，使用列表推导式，将[]改为()，生成一个generator对象<br>第二种，使用函数方式，采用yield关键字来实现</p>
+<h3 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h3><p>生成器我们通常可以认为一种特殊的迭代器，但是它不需要像迭代器一样去实现<strong>iter</strong>,<strong>next</strong>方法。只需要使用yield关键字，该关键字可以在每次调用生成器函数时起到暂停作用，并将其值进行返回。同时还会记录当前运行值的状态。</p>
+<h3 id="总结：迭代器和生成器"><a href="#总结：迭代器和生成器" class="headerlink" title="总结：迭代器和生成器"></a>总结：迭代器和生成器</h3><p>1、容器是一系列的元素集合，str、list、set、dict对象都可以看作是容器，容器都可以进行迭代（即用在while或for循环），凡是这样的容器我们都称为可迭代化对象（Iterable）。<br>2、可迭代化对象都实现了<strong>iter</strong>方法，该方法返回一个迭代器对象。<br>3、迭代器都拥有一个状态字段，用于记录下次迭代返回值。它实现了<strong>next</strong>和<strong>iter</strong>方法，迭代器不会一次性把所有的元素都加载到内存中，而是在需要的时候才生成返回结果。<br>4、生成器是一种特殊的迭代器，它的返回值不是通过return来返回的，而是通过yield来返回的。</p>
+
       
 
       
@@ -277,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/19/python_day01_int/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/19/python_day04_Iterator&generator/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -291,18 +285,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/19/python_day04_Iterator&generator/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          高级特性
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/07/19/python_day01_str/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基本数据类型--字符串</div>
+    <a href="/2018/07/19/python_day01_int/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基本数据类型--整型</div>
       <i class="icon-circle-right"></i>
     </a>
   
