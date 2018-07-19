@@ -241,10 +241,24 @@
     <article id="post-python_day01_str" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/19/python_day01_str/">基本数据类型--字符串</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/19/python_day01_str/" class="archive-article-date">
+  	<time datetime="2018-07-19T04:47:08.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="title-基本数据类型–字符串"><a href="#title-基本数据类型–字符串" class="headerlink" title="title:基本数据类型–字符串"></a>title:基本数据类型–字符串</h2><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容.<br>2、比较运算符：&gt;、&lt;、==、!=、&gt;=、&lt;=<br>他们的返回值为布尔型，即True或False,字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小.如果一旦出现一方的字母码值大于另一方，就结束比较.<br>提示：<br>在键盘上，所有的字符的ASCII码值都小于a,b,c…..这些字母的码值,只有这四个字符的ASCII码值大于字母z的码值：’{‘、’|’、’}’、’~’，它们的码值从123-126.<br>3、我们使用input()，允许进行交互式输入，默认input()输入的值类型为str字符串类型.</p>
+        <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容.<br>2、比较运算符：&gt;、&lt;、==、!=、&gt;=、&lt;=<br>他们的返回值为布尔型，即True或False,字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小.如果一旦出现一方的字母码值大于另一方，就结束比较.<br>提示：<br>在键盘上，所有的字符的ASCII码值都小于a,b,c…..这些字母的码值,只有这四个字符的ASCII码值大于字母z的码值：’{‘、’|’、’}’、’~’，它们的码值从123-126.<br>3、我们使用input()，允许进行交互式输入，默认input()输入的值类型为str字符串类型.</p>
 <h2 id="字符串常用的方法"><a href="#字符串常用的方法" class="headerlink" title="字符串常用的方法"></a>字符串常用的方法</h2><h3 id="1-find-查找"><a href="#1-find-查找" class="headerlink" title="1 find() 查找"></a>1 find() 查找</h3><p>函数格式：str.find(子字符串[,开始索引位，结束索引位]).<br>返回值：如果查找成功，则返回所查找内容在字符串中的索引位置，如果没有找到，返回-1.<br>注意：<br>如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位.<br>例如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ str1 = <span class="string">'hello'</span></span><br><span class="line">$ str1.find(<span class="string">'ll'</span>)</span><br><span class="line"></span><br><span class="line">2</span><br></pre></td></tr></table></figure>
 <p>该例中，’ll’在字符串中出现了两次，但只会返回第一次出现的索引位置.<br>为什么查找时，没有找到目标字符串的情况下会返回-1.其实，在find操作中，会对字符串进行扫描从字符串的索引位0开始，一直到字符串结尾，如果在字符串最后一位没有找到匹配的内容，将指向字符串结束符(EOF)，该结束符为-1.所以找不到时，find返回值为-1.</p>
