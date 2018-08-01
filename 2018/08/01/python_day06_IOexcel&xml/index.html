@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 老阳的技术博客</title>
+  <title>IO的处理--Excel文件和XML文件 | 老阳的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老阳的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="Python对Excel文件的操作1、需要三个主要的模块xlrd:用来读取Excel文件中的内容xlwt：用来生成Excel文件xlutils：用来实现Excel文件的复制 2、首先：xlrdopen_workbook()函数格式：open_workbook(文件名)返回值：返回Excel对象说明：打开指定的Excel文件，生成一个Excel对象用来实现读取行、列及单元格内容 函数格式：sheet">
+<meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IO的处理--Excel文件和XML文件">
+<meta property="og:url" content="http://yoursite.com/2018/08/01/python_day06_IOexcel&xml/index.html">
 <meta property="og:site_name" content="老阳的技术博客">
+<meta property="og:description" content="Python对Excel文件的操作1、需要三个主要的模块xlrd:用来读取Excel文件中的内容xlwt：用来生成Excel文件xlutils：用来实现Excel文件的复制 2、首先：xlrdopen_workbook()函数格式：open_workbook(文件名)返回值：返回Excel对象说明：打开指定的Excel文件，生成一个Excel对象用来实现读取行、列及单元格内容 函数格式：sheet">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-01T05:59:47.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老阳的技术博客">
+<meta name="twitter:title" content="IO的处理--Excel文件和XML文件">
+<meta name="twitter:description" content="Python对Excel文件的操作1、需要三个主要的模块xlrd:用来读取Excel文件中的内容xlwt：用来生成Excel文件xlutils：用来实现Excel文件的复制 2、首先：xlrdopen_workbook()函数格式：open_workbook(文件名)返回值：返回Excel对象说明：打开指定的Excel文件，生成一个Excel对象用来实现读取行、列及单元格内容 函数格式：sheet">
   
     <link rel="alternative" href="/atom.xml" title="老阳的技术博客" type="application/atom+xml">
   
@@ -155,160 +159,169 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-python_day06_IOexcel&amp;xml" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      IO的处理--Excel文件和XML文件
+    </h1>
+  
+
+        
+        <a href="/2018/08/01/python_day06_IOexcel&xml/" class="archive-article-date">
+  	<time datetime="2018-08-01T05:53:50.145Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-01</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Python对Excel文件的操作"><a href="#Python对Excel文件的操作" class="headerlink" title="Python对Excel文件的操作"></a>Python对Excel文件的操作</h2><h3 id="1、需要三个主要的模块"><a href="#1、需要三个主要的模块" class="headerlink" title="1、需要三个主要的模块"></a>1、需要三个主要的模块</h3><p>xlrd:用来读取Excel文件中的内容<br>xlwt：用来生成Excel文件<br>xlutils：用来实现Excel文件的复制</p>
+<h3 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h3><h4 id="首先：xlrd"><a href="#首先：xlrd" class="headerlink" title="首先：xlrd"></a>首先：xlrd</h4><p>open_workbook()<br>函数格式：open_workbook(文件名)<br>返回值：返回Excel对象<br>说明：打开指定的Excel文件，生成一个Excel对象用来实现读取行、列及单元格内容</p>
+<p>函数格式：sheet_by_name(sheet页面名)/sheet_by_index(sheet页索引位，默认从0开始)<br>返回值：sheet页对象<br>说明：找到指定的sheet页，生成一个对应的sheet页对象，对其内部的数据进行检索</p>
+<p>函数格式：sheet.cell(rownum,colnum)<br>返回值：返回指定行列的单元格对象，如果要获取其中的内容，调用value属性。<br>说明：通过指定行、列，能够确认一个单元格。</p>
+<h4 id="其次：xlwt"><a href="#其次：xlwt" class="headerlink" title="其次：xlwt"></a>其次：xlwt</h4><p>函数名称：Workbook()<br>返回值：返回一个新创建的Excel空对象<br>说明：该函数用来生成一个Excel对象，但是该对象没有任何内容</p>
+<p>函数名称：add_sheet(sheet名字)<br>返回值：返回一个新创建的sheet页对象<br>说明：该函数用来新增一个空的sheet页对象</p>
+<p>函数名称：write(row, col, value)<br>返回值：无<br>说明：对指定的行列单元格内，写入value内容。</p>
+<h4 id="最后：xlutils"><a href="#最后：xlutils" class="headerlink" title="最后：xlutils"></a>最后：xlutils</h4><p>函数格式：copy(Excel对象)<br>返回值：返回一个指定对象的副本<br>说明：在Python中对Excel的修改，都是生成一个对应的副本，修改后保存。</p>
+<p>函数格式：get_sheet(索引位)<br>返回值：返回一个指定对象副本中的sheet页<br>说明：我们实际修改的数据，都是位于sheet页中。因此要获取到指定的sheet页。</p>
+<h2 id="Python对XML文件的解析"><a href="#Python对XML文件的解析" class="headerlink" title="Python对XML文件的解析"></a>Python对XML文件的解析</h2><h3 id="1、XML解析的两种方式：DOM与SAX"><a href="#1、XML解析的两种方式：DOM与SAX" class="headerlink" title="1、XML解析的两种方式：DOM与SAX"></a>1、XML解析的两种方式：DOM与SAX</h3><p>DOM：文档对象模型，是Python处理XML文件的标准模式。一个DOM的解析器在解析XML文档时 ，一次性读入整个文档，把文档中的所有元素（标签和文本）保存在内存中的一个树形结构，然后我们可以利用DOM提供的各种函数，来读取或修改文档中的内容。</p>
+<p>SAX：是一种时间驱动的API，利用SAX解析XML 。主要使用解析器负责读取XML文档，并向事件处理器发生事件，比如：元素开始、元素结束。常用在1）大型文档的处理，2）只需要文件的部分内容，或者从文件中得到特定的部分3）建立自己的对象模型。</p>
+<p>dom与sax对比：<br>1、DOM解析需要读取整个文档到内存中，并且将所有元素保存到树形结构。那也就意味着，可以根据树形结构导航到任意节点，获取其相关内容。<br>2、SAX解析文档，将文档边读入，边解析的方式，不需要一次性读入全部文档内容，只需要读入一部分即可。同时，因为其边读入边解析的工作方式，能够适应大文件的解析，提高解析效率。</p>
+<h3 id="SAX解析文件步骤："><a href="#SAX解析文件步骤：" class="headerlink" title="SAX解析文件步骤："></a>SAX解析文件步骤：</h3><p>1、创建解析器<br>parser = sax.make_parser()<br>2、读取xml文档<br>xml.sax.parse(xmlfile)<br>3、设置ContentHandler对象，重写startDocument、endDocument、startElement、endElement方法</p>
+<p>startDocument():文档载入时调用，文档开始<br>   endDocument()：当解析器达到文档结尾时调用</p>
+<p>   startElement(name,attrs):当遇到XML标签时调用，name是标签的名字，attrs标签的属性字典<br>   endElement(name):当遇到XML标签结束时调用，name是标签名<br>4、使用SAX解析文件，需要为解析器配置ContentHandler，定义了如何解析标签，以及处理标签间文本内容的业务逻辑。<br>carhandler = CarHandler()<br>parser.setContentHandler(carhandler)</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/python_day03_dict/" class="archive-article-date">
-  	<time datetime="2018-07-19T01:17:18.698Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/python_day03_dict/">组合数据类型--dict</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/01/python_day06_IOexcel&xml/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/python_day03_list&tuple/" class="archive-article-date">
-  	<time datetime="2018-07-17T13:32:30.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/30/python_day06_IOtxt&bin/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">IO的处理--文本文件和二进制文件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/python_day03_list&tuple/">组合数据类型--list&amp;tuple</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/python_day02_github/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:41:18.997Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/python_day02_github/">关于重装系统之后恢复github的操作</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/python_day02_if&for&while/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:26:37.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/python_day02_if&for&while/">控制语句--条件&amp;循环</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/python_day01_Integral/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:26:37.704Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/python_day01_Integral/">常量&amp;变量</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -332,8 +345,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
