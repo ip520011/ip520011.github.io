@@ -157,6 +157,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-python_day07_pack&amp;py" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/02/python_day07_pack&py/">包与模块</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/02/python_day07_pack&py/" class="archive-article-date">
+  	<time datetime="2018-08-02T00:26:04.409Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1）模块"><a href="#1）模块" class="headerlink" title="1）模块"></a>1）模块</h2><p>基本概念：在Python中进行Python定义和声明的文件，以.py结尾。使用import或from   import导入的文件，我们成为模块。<br>2）模块的优势<br>首先，使用模块，可以将常用的功能和变量，统一分类存储在不同的文件中，在使用时进行导入。提供了代码的可维护性。<br>其次，使用模块因为将常用功能进行了统一调用，提供了代码的复用性<br>最后，解决了在同一个文件中，方法和变量重名的问题。<br>3）导入时的问题<br>如果导入了与文件同名的函数（方法名相同，函数个数相同）时，需要使用模块名调用函数，与文件中的函数进行区分，例如：<br>import my<br>my.show()<br>def show():<br>  pass<br>show()<br>4)模块可以在Python文件中，实现多次import导入，但是只有第一次导入时才真正将模块中的内容运行、方法载入，其他再进行导入时，Python解析器会先检测是否已经载入该模块，如果载入就不在执行相关操作。<br>总结：<br>模块载入一共分三个步骤：<br>1、为模块的导入，创建命名空间（划分新的内存地址），被载入的文件按照全局作用域来使用。<br>2、模块载入后，将在上一步操作中创建的命名空间中，执行模块中的代码<br>3、创建一个模块的名字，来引用模块所在的命名空间。my.show()</p>
+<p>5)当使用from  import引入多个模块时，同时多个模块存在同名函数，那么在程序中调用该函数时，以程序导入的最后一个模块的函数为准。</p>
+<h2 id="包："><a href="#包：" class="headerlink" title="包："></a>包：</h2><p>1）概念：包在Python中定义为可以包含多个模块文件的目录，其中必须要包含一个名为“<strong>init</strong>.py”的文件，用来初始化包。<br>2）包在调用的使用，首先会初始化<strong>init</strong>.py文件，主要功能为包中模块运行时提供所需要的相关数据，比如：数据库用户名称、密码、地址等内容。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/02/python_day07_pack&py/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python_day06_IOexcel&amp;xml" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -850,103 +915,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/07/19/python_day01_str/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python_day03_set" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/19/python_day03_set/">组合数据类型--set</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/19/python_day03_set/" class="archive-article-date">
-  	<time datetime="2018-07-19T01:29:44.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="集合-set"><a href="#集合-set" class="headerlink" title="集合(set)"></a>集合(set)</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h3><p>集合set是一个无序的数据集合，可以存储各种数据类型的元素，同时可以对集合中的元素进行新增、删除等操作，因此集合的长度是可变的。并且集合是不允许有重复元素，如果出现重复元素，除去第一个元素之外，都会被集合所忽略<br>注意：set是无序的，即存储元素到set的顺序与这些元素输出的顺序无关。set仍然是采用哈希算法，对这些元素进行存储的。</p>
-<h3 id="2-集合的声明与赋值"><a href="#2-集合的声明与赋值" class="headerlink" title="2 集合的声明与赋值"></a>2 集合的声明与赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1）set1 = &#123;1,2,3&#125;   生成一个集合</span><br><span class="line">2）set1 = <span class="built_in">set</span>(&#123;1,2,3&#125;)</span><br><span class="line">3) set1 = <span class="built_in">set</span>()   生成一个空集合，请注意集合只能通过<span class="built_in">set</span>()函数来生成空集合，而不是通过set1 = &#123;&#125;,这个表达式会生成一个空字典。</span><br></pre></td></tr></table></figure>
-<h3 id="3-数据类型转换"><a href="#3-数据类型转换" class="headerlink" title="3 数据类型转换"></a>3 数据类型转换</h3><p>字符串转成集合</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ string = <span class="string">'hello'</span></span><br><span class="line">$ set1 = <span class="built_in">set</span>(string)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">'h'</span>, <span class="string">'e'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>列表转成集合</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ list1 = [1,2,3]</span><br><span class="line">$ set1 = <span class="built_in">set</span>(list1)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3&#125;</span><br></pre></td></tr></table></figure>
-<p>元组转成集合</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ tup = (1,2,3)</span><br><span class="line">$ set1 = <span class="built_in">set</span>(tup)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-集合的操作"><a href="#4-集合的操作" class="headerlink" title="4 集合的操作"></a>4 集合的操作</h3><p>1）元素的增加 add()<br>函数格式：set.add(元素)<br>返回值：无返回值<br>结果：集合元素增加一个<br>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;1, 2, 3&#125;</span><br><span class="line">$ set1.add(4)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
-<p>2）元素的删除<br>第一、remove()<br>函数格式：set.remove(元素)<br>返回值：无返回值<br>结果：集合指定的元素被删除</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">set</span> = &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line">$ set1.remove(5)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
-<p>第二、discard()<br>函数格式：set.discard(元素)<br>返回值：无返回值<br>结果：集合中指定的元素被删除</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">set</span> = &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line">$ set1.discard(5)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：上面两个方法，如果删除一个不存在的元素，其中remove()会报错，而discar()无反应<br>第三、clear() 清空集合中所有的元素<br>函数格式：set.clear()<br>返回值：无返回值<br>结果：清空集合中所有的元素<br>set.clear()<br>第四、del命令 删除集合，并释放其所占内存资源<br>del set</p>
-<h3 id="5-集合运算"><a href="#5-集合运算" class="headerlink" title="5 集合运算"></a>5 集合运算</h3><p>1）并集运算 (|)或union()<br>两个集合进行并集运算，即将两个集合中的元素都合并到一个新的集合中，重复的元素只出现一次。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1 | set2 或</span><br><span class="line">$ set1.union(set2)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'jp'</span>, <span class="string">'tw'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>2）交集运算 （&amp;）或intersection()<br>两个集合进行交集运算，即将两个集合中相同的元素合并到一个新的集合中。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1 &amp; set2 或</span><br><span class="line">$ set1.intersection(set2)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>3)差集运算（-）或difference()<br>两个集合进行差集运算，即运算符左边的集合，与运算右边的集合进行差运算，相当于使用左边集合去除与右边集合相同的元素。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1 - set2 或</span><br><span class="line">$ set1.difference(set2)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 - set1 或</span><br><span class="line">$ set2.difference(set1)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>4)对称差运算（^）或者symmetric_difference()<br>两个集合进行对称差运算，即两个集合中除去相同元素，其他所有元素重新归并到一个新集合中。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line"></span><br><span class="line">$ set2 ^ set1 或</span><br><span class="line">$ set1.symmetric_difference(set2)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>,<span class="string">'jp'</span>, <span class="string">'fr'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>5)子集与超集（父集）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ subset = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>我们通过观察可以看到，subset中的内容，属于set1的一部分。因此，</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ subset = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br><span class="line">$ subset.issubset(set1)</span><br><span class="line"></span><br><span class="line">True</span><br></pre></td></tr></table></figure>
-<p>表示，subset是set1集合的一个子集合<br>同理，我们也可以说，set1是subset的父集合</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ subset = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br><span class="line">$ set1.issuperset(subset)</span><br><span class="line"></span><br><span class="line">True</span><br></pre></td></tr></table></figure>
-<p>6、集合常用函数<br>1）update()<br>函数格式：set1.update(set2)<br>返回值：无<br>结果：我们将set2中的元素，添加到set1中，如果有相同的元素只保留一个。同时，该操作会修改set1的元素数量。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1.update(set2)</span><br><span class="line">$ set1</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'jp'</span>, <span class="string">'tw'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>2)intersection_update()<br>函数格式：set1.intersection_update(set2)<br>返回值：无<br>结果：我们使用set2中的元素，添加到set1中，其中，保留两个集合中相同的元素。其中，set1、set2中其他的元素被舍弃。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1.intersection_update(set2)</span><br><span class="line">$ set1</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>3）symmetric_difference_update()<br>函数格式：symmetric_difference_update()<br>返回值：无<br>结果：我们使用set1与set2进行运算，只保留两者除去相同元素之外的元素。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1.symmetric_difference_update(set2)</span><br><span class="line">$ set1</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/19/python_day03_set/">展开全文 >></a>
         </p>
       
 
