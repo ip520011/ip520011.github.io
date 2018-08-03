@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/8 | 老阳的技术博客</title>
+  <title>药品进销存 | 老阳的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老阳的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/08/index.html">
+  <meta name="description" content="本案例用python基础开发，实现了对代码进行了函数封装，利用装饰器将操作记录进行了日志保存。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081">
+<meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="药品进销存">
+<meta property="og:url" content="http://yoursite.com/2018/07/25/py05_lesson/index.html">
 <meta property="og:site_name" content="老阳的技术博客">
+<meta property="og:description" content="本案例用python基础开发，实现了对代码进行了函数封装，利用装饰器将操作记录进行了日志保存。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-25T12:52:13.875Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老阳的技术博客">
+<meta name="twitter:title" content="药品进销存">
+<meta name="twitter:description" content="本案例用python基础开发，实现了对代码进行了函数封装，利用装饰器将操作记录进行了日志保存。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081">
   
     <link rel="alternative" href="/atom.xml" title="老阳的技术博客" type="application/atom+xml">
   
@@ -155,103 +159,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-py05_lesson" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      药品进销存
+    </h1>
+  
+
+        
+        <a href="/2018/07/25/py05_lesson/" class="archive-article-date">
+  	<time datetime="2018-07-25T12:44:01.533Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本案例用python基础开发，实现了对代码进行了函数封装，利用装饰器将操作记录进行了日志保存。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line">def <span class="built_in">log</span>(msg):</span><br><span class="line">    <span class="comment"># 创建一个日志对象，并设置日志级别</span></span><br><span class="line">    logger = logging.getLogger(<span class="string">'pythonlogger'</span>)</span><br><span class="line">    logger.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建一个handler,用来将日志内容存入文件中</span></span><br><span class="line">    file = logging.FileHandler(<span class="string">'test.log'</span>)</span><br><span class="line">    file.setFormatter(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建一个handler，用来将日志输出到控制台</span></span><br><span class="line">    console = logging.StreamHandler()</span><br><span class="line">    console.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义日志输出格式</span></span><br><span class="line">    formatter = logging.Formatter(<span class="string">'%(asctime)s - %(name)s - %(levelname)s - %(message)s'</span>)</span><br><span class="line">    file.setFormatter(formatter)</span><br><span class="line">    console.setFormatter(formatter)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将logger添加到handler</span></span><br><span class="line">    logger.addHandler(file)</span><br><span class="line">    logger.addHandler(console)</span><br><span class="line"></span><br><span class="line">    logger.info(msg)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 执行完之后移除本次记录</span></span><br><span class="line">    logger.removeHandler(file)</span><br><span class="line">    logger.removeHandler(console)</span><br><span class="line"></span><br><span class="line">buy_dic = dict()</span><br><span class="line">stock_dic = dict()</span><br><span class="line">sale_dic = dict()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户身份字典，用来存储用户名和密码</span></span><br><span class="line">user = &#123;</span><br><span class="line">    <span class="string">'sam'</span>:<span class="string">'123'</span>,</span><br><span class="line">    <span class="string">'tom'</span>:<span class="string">'000'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def mylogger(f):</span><br><span class="line">    def inner(*var,**kw):</span><br><span class="line">        <span class="keyword">if</span> f(*var,**kw):</span><br><span class="line">            <span class="built_in">log</span>(f.__name__+<span class="string">'操作成功！'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">log</span>(f.__name__+<span class="string">'操作失败！'</span>)</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 菜单项，供程序运行调用</span></span><br><span class="line">def menu():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'*'</span>*30)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'1.登录药品采购平台'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'2.采购药品'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'3.药品入库'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'4.药品销售'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'5.药品统计'</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'6.退出'</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">" </span></span><br><span class="line"><span class="string">    function:登录功能</span></span><br><span class="line"><span class="string">    parameter:username(用户名),password(密码)</span></span><br><span class="line"><span class="string">    return:True or False</span></span><br><span class="line"><span class="string">    description:传递参数:用户名与密码，验证用户名与密码是否正确:如果正确返回True，反之返回False</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">@mylogger</span><br><span class="line">def load(username,password):</span><br><span class="line">    flag = False</span><br><span class="line">    <span class="keyword">if</span> username <span class="keyword">in</span> user.keys():</span><br><span class="line">        flag = (password == user[username])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">" </span></span><br><span class="line"><span class="string">    function:采购药品功能</span></span><br><span class="line"><span class="string">    parameter:m_name,m_on,price,buyer,catalog,num,buy_time</span></span><br><span class="line"><span class="string">    return:none</span></span><br><span class="line"><span class="string">    description:根据传入的药品参数，存入指定的药品采购字典中</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">@mylogger</span><br><span class="line">def buy(buy_time,**kw):</span><br><span class="line">    buy_dic[buy_time] = kw</span><br><span class="line">    flag = False</span><br><span class="line">    <span class="keyword">if</span> len(buy_dic[buy_time]) != 0:</span><br><span class="line">        flag = True</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"  </span></span><br><span class="line"><span class="string">    function:查询指定字典内容</span></span><br><span class="line"><span class="string">    parameter:dic</span></span><br><span class="line"><span class="string">    return:none</span></span><br><span class="line"><span class="string">    desription:根据传入字典的参数，对其进行遍历</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">@mylogger</span><br><span class="line">def findAll(dic):</span><br><span class="line">    <span class="built_in">print</span>(dic)</span><br><span class="line">    flag = False</span><br><span class="line">    <span class="keyword">if</span> len(dic) == 0:</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag = True</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"  </span></span><br><span class="line"><span class="string">    function:药品入库功能</span></span><br><span class="line"><span class="string">    parameter:m_name,m_on,price,stocker,catalog,num,stock_time</span></span><br><span class="line"><span class="string">    return:none</span></span><br><span class="line"><span class="string">    discription:根据传入的采购时间，进行查询采购字典中是否有对应记录，如果存在则进行入库操作</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">@mylogger</span><br><span class="line">def stock(buy_time,stocker,stock_time,**kw):</span><br><span class="line">    flag = False</span><br><span class="line">    <span class="keyword">if</span> buy_time <span class="keyword">in</span> buy_dic.keys():</span><br><span class="line">        kw = buy_dic[buy_time].copy()</span><br><span class="line">        del kw[<span class="string">'buyer'</span>]</span><br><span class="line">        m_no = kw.pop(<span class="string">'m_no'</span>)</span><br><span class="line">        kw[<span class="string">'stocker'</span>] = stocker</span><br><span class="line">        kw[<span class="string">'stock_time'</span>] = stock_time</span><br><span class="line">        stock_dic[m_no] = kw</span><br><span class="line">        flag = True</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">" </span></span><br><span class="line"><span class="string">    function:药品销售功能</span></span><br><span class="line"><span class="string">    parameter:m_name,m_on,price,saler,catalog,num,sale_time</span></span><br><span class="line"><span class="string">    return:none</span></span><br><span class="line"><span class="string">    discription:根据传入的入库时间，进行查询入库字典中是否有对应记录，如果存在则进行销售操作</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">@mylogger</span><br><span class="line">def sale(m_no,saler,num,total,sale_time,**kw):</span><br><span class="line">    flag = False</span><br><span class="line">    <span class="keyword">if</span> m_no <span class="keyword">in</span> stock_dic.keys():</span><br><span class="line">        <span class="keyword">if</span> num &gt; stock_dic[m_no][<span class="string">'num'</span>]:</span><br><span class="line">            flag = False</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            kw = stock_dic[m_no].copy()</span><br><span class="line">            del kw[<span class="string">'stocker'</span>]</span><br><span class="line">            del kw[<span class="string">'stock_time'</span>]</span><br><span class="line">            kw[<span class="string">'saler'</span>] = saler</span><br><span class="line">            kw[<span class="string">'sale_time'</span>] = sale_time</span><br><span class="line">            kw[<span class="string">'num'</span>] = num</span><br><span class="line">            kw[<span class="string">'total'</span>] = total</span><br><span class="line">            sale_dic[m_no] = kw</span><br><span class="line">            stock_dic[m_no][<span class="string">'num'</span>] = stock_dic[m_no][<span class="string">'num'</span>] - num</span><br><span class="line">            flag = True</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">" </span></span><br><span class="line"><span class="string">    function:药品查找功能</span></span><br><span class="line"><span class="string">    parameter:m_name,m_on,price,saler,catalog,num,sale_time</span></span><br><span class="line"><span class="string">    return:none</span></span><br><span class="line"><span class="string">    discription:根据传入药品名，进行查询入库字典中是否有对应记录，如果存在则进行输出显示</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">@mylogger</span><br><span class="line">def count(m_name):</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> buy_dic.keys():</span><br><span class="line">        <span class="keyword">if</span> m_name <span class="keyword">in</span> buy_dic[item][<span class="string">'m_name'</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'药品名：&#123;&#125; 购入数量：&#123;&#125; 购入人：&#123;&#125;'</span>.format(m_name,buy_dic[item][<span class="string">'num'</span>],buy_dic[item][<span class="string">'buyer'</span>]))</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> stock_dic.keys():</span><br><span class="line">        <span class="keyword">if</span> m_name <span class="keyword">in</span> stock_dic[item][<span class="string">'m_name'</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'药品名：&#123;&#125; 入库数量：&#123;&#125; 入库人：&#123;&#125;'</span>.format(m_name,stock_dic[item][<span class="string">'num'</span>],stock_dic[item][<span class="string">'stocker'</span>]))</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> sale_dic.keys():</span><br><span class="line">        <span class="keyword">if</span> m_name <span class="keyword">in</span> sale_dic[item][<span class="string">'m_name'</span>]:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'药品名：&#123;&#125; 销售数量：&#123;&#125; 销售人：&#123;&#125;'</span>.format(m_name,sale_dic[item][<span class="string">'num'</span>],sale_dic[item][<span class="string">'saler'</span>]))</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> sale_dic:</span><br><span class="line">        list2 = list()</span><br><span class="line">        list2 = [sale_dic[item][<span class="string">'num'</span>],sale_dic[item][<span class="string">'m_name'</span>],sale_dic[item][<span class="string">'total'</span>],100*(sale_dic[item][<span class="string">'num'</span>]/(sale_dic[item][<span class="string">'num'</span>]+stock_dic[item][<span class="string">'num'</span>]))]</span><br><span class="line">        list1.append(list2)</span><br><span class="line">    list1.sort(reverse = True)</span><br><span class="line">    flag = False</span><br><span class="line">    <span class="keyword">if</span> len(list1) == 0:</span><br><span class="line">        flag = False</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        flag = True</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'商品名 销售数量 总价 百分比'</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> list1:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'&#123;&#125;      &#123;&#125;      &#123;&#125;    &#123;&#125;%'</span>.format(i[1],i[0],i[2],i[3]))</span><br><span class="line">        list1.clear()</span><br><span class="line">    <span class="built_in">return</span> flag</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">" </span></span><br><span class="line"><span class="string">    function:退出功能</span></span><br><span class="line"><span class="string">    parameter:none</span></span><br><span class="line"><span class="string">    return:none</span></span><br><span class="line"><span class="string">    description:退出整个应用程序</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">def quit():</span><br><span class="line">    <span class="built_in">exit</span>()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    list1 = list()</span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        menu()</span><br><span class="line">        num = int(input(<span class="string">'请输入菜单编号：'</span>))</span><br><span class="line">        <span class="keyword">if</span> 1 == num:</span><br><span class="line">            username = input(<span class="string">'请输入用户名：'</span>)</span><br><span class="line">            password = input(<span class="string">'请输入密码：'</span>)</span><br><span class="line">            flag = load(username,password)</span><br><span class="line">        <span class="keyword">elif</span> 2 == num:</span><br><span class="line">            buy_time = input(<span class="string">'请输入采购日期.按照YYYYMMDD格式输入'</span>)</span><br><span class="line">            m_no = input(<span class="string">'请输入药品编号：'</span>)</span><br><span class="line">            m_name = input(<span class="string">'请输入药品名：'</span>)</span><br><span class="line">            catalog = input(<span class="string">'请输入药品大类：'</span>)</span><br><span class="line">            price = <span class="built_in">float</span>(input(<span class="string">'请输入药品单价：'</span>))</span><br><span class="line">            num = int(input(<span class="string">'请输入采购药品的数量：'</span>))</span><br><span class="line">            buyer = input(<span class="string">'请输入采购人姓名：'</span>)</span><br><span class="line">            buy(buy_time,m_name=m_name,m_no=m_no,price=price,buyer=buyer,catalog=catalog,num=num)</span><br><span class="line">            findAll(buy_dic)</span><br><span class="line">        <span class="keyword">elif</span> 3 == num:</span><br><span class="line">            buy_time = input(<span class="string">'请输入采购日期.按照YYYYMMDD格式输入'</span>)</span><br><span class="line">            stock_time = input(<span class="string">'请输入入库日期.按照YYYYMMDD格式输入'</span>)</span><br><span class="line">            stocker = input(<span class="string">'请输入库管人员姓名：'</span>)</span><br><span class="line">            stock(buy_time,stocker,stock_time)</span><br><span class="line">            findAll(stock_dic)</span><br><span class="line">        <span class="keyword">elif</span> 4 == num:</span><br><span class="line">            sale_time = input(<span class="string">'请输入销售日期.按照YYYYMMDD格式输入'</span>)</span><br><span class="line">            stock_no = input(<span class="string">'请输入药品编号：'</span>)</span><br><span class="line">            num = int(input(<span class="string">'请输入数量：'</span>))</span><br><span class="line">            total = num * price</span><br><span class="line">            saler = input(<span class="string">'请输入销售人员姓名：'</span>)</span><br><span class="line">            sale(m_no,saler,num,total,sale_time)</span><br><span class="line">            findAll(sale_dic)</span><br><span class="line">        <span class="keyword">elif</span> 5 == num:</span><br><span class="line">            m_name = input(<span class="string">'请输入你要查询的药品名'</span>)</span><br><span class="line">            count(m_name)</span><br><span class="line">        <span class="keyword">elif</span> 6 == num:</span><br><span class="line">            msg = input(<span class="string">'确定要退出吗？退出请按Q：'</span>)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'Q'</span> == msg or <span class="string">'q'</span> == msg:</span><br><span class="line">                quit()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'按键错误，请重新选择！退出请按Q：'</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">PS E:\pythoncode&gt; &amp; python e:/pythoncode/lesson21.py</span><br><span class="line">******************************</span><br><span class="line">1.登录药品采购平台</span><br><span class="line">2.采购药品</span><br><span class="line">3.药品入库</span><br><span class="line">4.药品销售</span><br><span class="line">5.药品统计</span><br><span class="line">6.退出</span><br><span class="line">请输入菜单编号：1</span><br><span class="line">请输入用户名：sam</span><br><span class="line">请输入密码：123</span><br><span class="line">2018-07-25 20:46:25,586 - pythonlogger - INFO - load操作成功！</span><br><span class="line">******************************</span><br><span class="line">1.登录药品采购平台</span><br><span class="line">2.采购药品</span><br><span class="line">3.药品入库</span><br><span class="line">4.药品销售</span><br><span class="line">5.药品统计</span><br><span class="line">6.退出</span><br><span class="line">请输入菜单编号：2</span><br><span class="line">请输入采购日期.按照YYYYMMDD格式输入20120102</span><br><span class="line">请输入药品编号：1001</span><br><span class="line">请输入药品名：阿司匹林</span><br><span class="line">请输入药品大类：otc</span><br><span class="line">请输入药品单价：10</span><br><span class="line">请输入采购药品的数量：20</span><br><span class="line">请输入采购人姓名：sam</span><br><span class="line">2018-07-25 20:46:48,204 - pythonlogger - INFO - buy操作成功！</span><br><span class="line">&#123;<span class="string">'20120102'</span>: &#123;<span class="string">'m_name'</span>: <span class="string">'阿司匹林'</span>, <span class="string">'m_no'</span>: <span class="string">'1001'</span>, <span class="string">'price'</span>: 10.0, <span class="string">'buyer'</span>: <span class="string">'sam'</span>, <span class="string">'catalog'</span>: <span class="string">'otc'</span>, <span class="string">'num'</span>: 20&#125;&#125;</span><br><span class="line">2018-07-25 20:46:48,214 - pythonlogger - INFO - findAll操作成功！</span><br><span class="line">******************************</span><br><span class="line">1.登录药品采购平台</span><br><span class="line">2.采购药品</span><br><span class="line">3.药品入库</span><br><span class="line">4.药品销售</span><br><span class="line">5.药品统计</span><br><span class="line">6.退出</span><br><span class="line">请输入菜单编号：3</span><br><span class="line">请输入采购日期.按照YYYYMMDD格式输入20120102</span><br><span class="line">请输入入库日期.按照YYYYMMDD格式输入20120203</span><br><span class="line">请输入库管人员姓名：sam</span><br><span class="line">2018-07-25 20:47:03,145 - pythonlogger - INFO - stock操作成功！</span><br><span class="line">&#123;<span class="string">'1001'</span>: &#123;<span class="string">'m_name'</span>: <span class="string">'阿司匹林'</span>, <span class="string">'price'</span>: 10.0, <span class="string">'catalog'</span>: <span class="string">'otc'</span>, <span class="string">'num'</span>: 20, <span class="string">'stocker'</span>: <span class="string">'sam'</span>, <span class="string">'stock_time'</span>: <span class="string">'20120203'</span>&#125;&#125;</span><br><span class="line">2018-07-25 20:47:03,145 - pythonlogger - INFO - findAll操作成功！</span><br><span class="line">******************************</span><br><span class="line">1.登录药品采购平台</span><br><span class="line">2.采购药品</span><br><span class="line">3.药品入库</span><br><span class="line">4.药品销售</span><br><span class="line">5.药品统计</span><br><span class="line">6.退出</span><br><span class="line">请输入菜单编号：4</span><br><span class="line">请输入销售日期.按照YYYYMMDD格式输入20120303</span><br><span class="line">请输入药品编号：1001</span><br><span class="line">请输入数量：12</span><br><span class="line">请输入销售人员姓名：sam</span><br><span class="line">2018-07-25 20:47:16,040 - pythonlogger - INFO - sale操作成功！</span><br><span class="line">&#123;<span class="string">'1001'</span>: &#123;<span class="string">'m_name'</span>: <span class="string">'阿司匹林'</span>, <span class="string">'price'</span>: 10.0, <span class="string">'catalog'</span>: <span class="string">'otc'</span>, <span class="string">'num'</span>: 12, <span class="string">'saler'</span>: <span class="string">'sam'</span>, <span class="string">'sale_time'</span>: <span class="string">'20120303'</span>, <span class="string">'total'</span>: 120.0&#125;&#125;</span><br><span class="line">2018-07-25 20:47:16,040 - pythonlogger - INFO - findAll操作成功！</span><br><span class="line">******************************</span><br><span class="line">1.登录药品采购平台</span><br><span class="line">2.采购药品</span><br><span class="line">3.药品入库</span><br><span class="line">4.药品销售</span><br><span class="line">5.药品统计</span><br><span class="line">6.退出</span><br><span class="line">请输入菜单编号：5</span><br><span class="line">请输入你要查询的药品名阿司匹林</span><br><span class="line">药品名：阿司匹林 购入数量：20 购入人：sam</span><br><span class="line">药品名：阿司匹林 入库数量：8 入库人：sam</span><br><span class="line">药品名：阿司匹林 销售数量：12 销售人：sam</span><br><span class="line">商品名 销售数量 总价 百分比</span><br><span class="line">阿司匹林      12      120.0    60.0%</span><br><span class="line">2018-07-25 20:47:28,183 - pythonlogger - INFO - count操作成功！</span><br><span class="line">******************************</span><br><span class="line">1.登录药品采购平台</span><br><span class="line">2.采购药品</span><br><span class="line">3.药品入库</span><br><span class="line">4.药品销售</span><br><span class="line">5.药品统计</span><br><span class="line">6.退出</span><br><span class="line">请输入菜单编号：6</span><br><span class="line">确定要退出吗？退出请按Q：q</span><br><span class="line">PS E:\pythoncode&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/03/py08_error/" class="archive-article-date">
-  	<time datetime="2018-08-03T00:38:31.470Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/03/py08_error/">异常</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/25/py05_lesson/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/02/py07_pack&py/" class="archive-article-date">
-  	<time datetime="2018-08-02T00:26:04.409Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/07/30/py06_IOtxt&bin/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          IO的处理--文本文件和二进制文件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/25/py05_log/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">日志的创建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/02/py07_pack&py/">包与模块</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/01/py06_IOexcel&xml/" class="archive-article-date">
-  	<time datetime="2018-08-01T05:53:50.145Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/01/py06_IOexcel&xml/">IO的处理--Excel文件和XML文件</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -274,8 +340,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

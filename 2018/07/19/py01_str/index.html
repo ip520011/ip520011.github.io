@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/8 | 老阳的技术博客</title>
+  <title>基本数据类型--字符串 | 老阳的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老阳的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/08/index.html">
+  <meta name="description" content="字符串1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容.2、比较运算符：&amp;gt;、&amp;lt;、==、!=、&amp;gt;=、&amp;lt;=他们的返回值为布尔型，即True或False,字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小.如果一旦出现一方的字母码值大于另一方，就结束比较.提示：在键盘上，所有的字符的ASCII码值都小于a,b,">
+<meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基本数据类型--字符串">
+<meta property="og:url" content="http://yoursite.com/2018/07/19/py01_str/index.html">
 <meta property="og:site_name" content="老阳的技术博客">
+<meta property="og:description" content="字符串1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容.2、比较运算符：&amp;gt;、&amp;lt;、==、!=、&amp;gt;=、&amp;lt;=他们的返回值为布尔型，即True或False,字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小.如果一旦出现一方的字母码值大于另一方，就结束比较.提示：在键盘上，所有的字符的ASCII码值都小于a,b,">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-19T05:10:28.676Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老阳的技术博客">
+<meta name="twitter:title" content="基本数据类型--字符串">
+<meta name="twitter:description" content="字符串1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容.2、比较运算符：&amp;gt;、&amp;lt;、==、!=、&amp;gt;=、&amp;lt;=他们的返回值为布尔型，即True或False,字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小.如果一旦出现一方的字母码值大于另一方，就结束比较.提示：在键盘上，所有的字符的ASCII码值都小于a,b,">
   
     <link rel="alternative" href="/atom.xml" title="老阳的技术博客" type="application/atom+xml">
   
@@ -155,103 +159,190 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-py01_str" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      基本数据类型--字符串
+    </h1>
+  
+
+        
+        <a href="/2018/07/19/py01_str/" class="archive-article-date">
+  	<time datetime="2018-07-19T04:47:08.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容.<br>2、比较运算符：&gt;、&lt;、==、!=、&gt;=、&lt;=<br>他们的返回值为布尔型，即True或False,字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小.如果一旦出现一方的字母码值大于另一方，就结束比较.<br>提示：<br>在键盘上，所有的字符的ASCII码值都小于a,b,c…..这些字母的码值,只有这四个字符的ASCII码值大于字母z的码值：’{‘、’|’、’}’、’~’，它们的码值从123-126.<br>3、我们使用input()，允许进行交互式输入，默认input()输入的值类型为str字符串类型.</p>
+<h2 id="字符串常用的方法"><a href="#字符串常用的方法" class="headerlink" title="字符串常用的方法"></a>字符串常用的方法</h2><h3 id="1-find-查找"><a href="#1-find-查找" class="headerlink" title="1 find() 查找"></a>1 find() 查找</h3><p>函数格式：str.find(子字符串[,开始索引位，结束索引位]).<br>返回值：如果查找成功，则返回所查找内容在字符串中的索引位置，如果没有找到，返回-1.<br>注意：<br>如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位.<br>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ str1 = <span class="string">'hello'</span></span><br><span class="line">$ str1.find(<span class="string">'ll'</span>)</span><br><span class="line"></span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<p>该例中，’ll’在字符串中出现了两次，但只会返回第一次出现的索引位置.<br>为什么查找时，没有找到目标字符串的情况下会返回-1.其实，在find操作中，会对字符串进行扫描从字符串的索引位0开始，一直到字符串结尾，如果在字符串最后一位没有找到匹配的内容，将指向字符串结束符(EOF)，该结束符为-1.所以找不到时，find返回值为-1.</p>
+<h3 id="更多用法："><a href="#更多用法：" class="headerlink" title="更多用法："></a>更多用法：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'apple,banana,apple,apple'</span></span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>)</span><br><span class="line">0</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,5)</span><br><span class="line">13</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,7,20)</span><br><span class="line">13</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,14,20)</span><br><span class="line">-1</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,14,24)</span><br><span class="line">19</span><br></pre></td></tr></table></figure>
+<p>对比：<br>index() 返回指定字符的索引位.<br>函数格式：index(子字符串[,开始索引位，结束索引位]).<br>返回值：如果找到指定的字符串，则返回其索引位；如果找不到就报错ValueError.<br>find()与index()函数的区别<br>(1)两者在执行结果时类似的，如果找到指定的字符就会返回其索引位.<br>(2)find()如果找不到指定的字符时，返回-1；而index()找不到指定的字符，raise ValueError.<br>(3)从效率上来讲，index的查询速度要优于find,因为在python中对于像字符串这样的有序数据类型，会产生一个索引对象来自动维护其序列，find()函数不管是否有这样的序列，都需要在字符串本身进行逐一查找，而index()会通过这个索引对象的映射方式，来快速找到对应的索引位.</p>
+<h3 id="2-split-拆分字符串"><a href="#2-split-拆分字符串" class="headerlink" title="2 split() 拆分字符串"></a>2 split() 拆分字符串</h3><p>函数格式：str.split([分隔符]).<br>返回值：根据指定的分隔符，对字符串进行拆分，返回一个列表；如果不指定分隔符，那么会将整个字符串，作为列表的一个元素.<br>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'tv,pc,notebook,phone'</span></span><br><span class="line">&gt;&gt;&gt; string1.split(<span class="string">','</span>)</span><br><span class="line">[<span class="string">'tv'</span>, <span class="string">'pc'</span>, <span class="string">'notebook'</span>, <span class="string">'phone'</span>]</span><br><span class="line">&gt;&gt;&gt; string1.split()</span><br><span class="line">[<span class="string">'tv,pc,notebook,phone'</span>]</span><br></pre></td></tr></table></figure>
+<p>注意：<br>split中的分隔符，我们根据字符串中的实际情况而定.如果使用了不正确的分隔符，str.split(‘错误分隔符’)操作结果str.split(),会将整个字符串作为列表的一个元素.</p>
+<h3 id="3-strip-字符串左右两端去除指定字符（默认情况，去除空格）"><a href="#3-strip-字符串左右两端去除指定字符（默认情况，去除空格）" class="headerlink" title="3 strip() 字符串左右两端去除指定字符（默认情况，去除空格）"></a>3 strip() 字符串左右两端去除指定字符（默认情况，去除空格）</h3><p>函数格式：str.strip([指定字符])<br>返回值：根据指定的字符，对字符串进行两端去除其内容，返回一个新的字符串.如果字符串中间有空格或指定字符，那么该函数不起作用.如果指定的字符在字符串左右两端不存在，那么将返回字符串本身.<br>例如：<br>缺省情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'  hello world  '</span></span><br><span class="line">&gt;&gt;&gt; string1.strip()</span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span>(string1)</span><br><span class="line">  hello world</span><br></pre></td></tr></table></figure>
+<p>指定字符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'awelcom to zhengzhoua'</span></span><br><span class="line">&gt;&gt;&gt; string1.strip(<span class="string">'a'</span>)</span><br><span class="line"><span class="string">'welcom to zhengzhou'</span></span><br></pre></td></tr></table></figure>
+<p>注意：<br>(1)字符串类型，一旦被声明赋值后，其内容是不可被改变的，如果需要改变原字符串变量的值，必须对其进行重新赋值.<br>(2)如果指定字符内容为一个字符序列，那么意味着使用strip去除左右两端指定字符时，只要符合字符序列中的某一位，就进行去除</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">' awelcom to zhengzhouab'</span></span><br><span class="line">&gt;&gt;&gt; string1.strip(<span class="string">' ab'</span>)</span><br><span class="line"><span class="string">'welcom to zhengzhou'</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-replace-替换函数"><a href="#4-replace-替换函数" class="headerlink" title="4 replace()替换函数"></a>4 replace()替换函数</h3><p>函数格式：str.replace(old,new[,max])<br>返回值：将指定字符串（old）替换为新字符串（new）,最大可以替换max次.替换完成后，返回一个新字符串.<br>注意：<br>此处的max参数，主要用来指定替换的次数，如果该参数缺省，表示替换里面所有符合条件的字符串.<br>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'honor,oppo,vivo,apple,oppo,oppo'</span></span><br><span class="line">&gt;&gt;&gt; old_str = <span class="string">'oppo'</span></span><br><span class="line">&gt;&gt;&gt; new_str = <span class="string">'xiaomi'</span></span><br><span class="line">&gt;&gt;&gt; string1.replace(old_str, new_str)     <span class="comment"># 替换所有的oppo</span></span><br><span class="line"><span class="string">'honor,xiaomi,vivo,apple,xiaomi,xiaomi'</span></span><br><span class="line">&gt;&gt;&gt; string1.replace(old_str, new_str,2)   <span class="comment">#替换指定次数，即两处oppo</span></span><br><span class="line"><span class="string">'honor,xiaomi,vivo,apple,xiaomi,oppo'</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-isalnum-、isalpha-、isdigit"><a href="#5-isalnum-、isalpha-、isdigit" class="headerlink" title="5 isalnum()、isalpha()、isdigit()"></a>5 isalnum()、isalpha()、isdigit()</h3><p>函数格式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str.isalnum()    判断字符串内容，是否有数字或字母组成</span><br><span class="line">str.isalpha()    判断字符串内容，是否由字母组成</span><br><span class="line">str.isdigit()    判断字符串内容，是否由数字组成</span><br></pre></td></tr></table></figure>
+<p>返回值：如果符合条件，返回True；如果不符合，返回False。</p>
+<h3 id="6-字符串运算符"><a href="#6-字符串运算符" class="headerlink" title="6 [] 字符串运算符"></a>6 [] 字符串运算符</h3><p>使用方法：str[索引位] =&gt; 返回指定索引位的字符，<br>索引位有两种表示方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string1 = hello world</span><br><span class="line">第一种：string1[0] =&gt; h    到string1[10] =&gt; d</span><br><span class="line">第二种：string1[-1] =&gt; d   到string1[-11] =&gt; h</span><br></pre></td></tr></table></figure>
+<p>切片操作:<br>格式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str[start,end,step]</span><br><span class="line">start：代表切片开始的索引位</span><br><span class="line">end: 代表切片结束的索引位（但是不会输出该索引位指向的字符）</span><br><span class="line">step：代表每隔次几个字符个数截取一个</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">string1 = hello world</span><br><span class="line">string1[0:3] =&gt; hel   从索引位为0的字符开始，到索引位3结束，但不包括索引位3所指向的字符。</span><br><span class="line">string1[2:4] =&gt; ll</span><br><span class="line">string1[0:-1] =&gt; hello worl </span><br><span class="line">string1[0:8:2] =&gt; hlow</span><br><span class="line"></span><br><span class="line">str1[:]  =&gt; <span class="string">'hello world'</span> 等于将字符串进行复制</span><br><span class="line">str1[:5] =&gt; <span class="string">'hello'</span>       如果没有标明开始索引位，默认从0开始</span><br><span class="line">str1[::] =&gt; <span class="string">'hello world'</span>  等同于str1[:]</span><br><span class="line"></span><br><span class="line">使用步长，实现字符串反转</span><br><span class="line">string1[-1::-1]  =&gt;dlrow olleh    从索引位-1开始，一直到字符串结束，反向输出字符</span><br><span class="line">但是下列操作，会返回一个空字符串：</span><br><span class="line">string1[-1:4]  =&gt; <span class="string">''</span></span><br><span class="line">string1[-1:-5] =&gt; <span class="string">''</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-连接符与重复操作符"><a href="#7-连接符与重复操作符" class="headerlink" title="7 连接符与重复操作符"></a>7 连接符与重复操作符</h3><p>+：在字符串中使用时，作为连接两个字符串，并返回一个新字符串的作用来使用。<br><em>：重复操作指定的次数，即将字符串重复输出N次。返回一个新字符串。<br>注意：在重复操作中，必须遵循：字符串</em>正整数这样的格式，如果数值不是正整数，其结果返回一个空字符串，如果不是数值类型，程序报错。<br>8）in运算符<br>用来检测指定的内容，是否在字符串中，如果存在则返回True，反之返回False<br>例如:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'hello world'</span></span><br><span class="line">&gt;&gt;&gt; substr = <span class="string">'e'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; substr = <span class="string">'ll'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">True</span><br><span class="line">substr = <span class="string">'wr'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/03/py08_error/" class="archive-article-date">
-  	<time datetime="2018-08-03T00:38:31.470Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/03/py08_error/">异常</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/19/py01_str/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/02/py07_pack&py/" class="archive-article-date">
-  	<time datetime="2018-08-02T00:26:04.409Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/07/19/py01_int/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          基本数据类型--整型
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/19/py03_set/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">组合数据类型--set</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/02/py07_pack&py/">包与模块</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/01/py06_IOexcel&xml/" class="archive-article-date">
-  	<time datetime="2018-08-01T05:53:50.145Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/01/py06_IOexcel&xml/">IO的处理--Excel文件和XML文件</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -274,8 +365,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
