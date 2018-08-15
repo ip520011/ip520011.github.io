@@ -157,6 +157,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-py10_crawler" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/15/py10_crawler/">Python爬虫基础</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/15/py10_crawler/" class="archive-article-date">
+  	<time datetime="2018-08-15T00:30:13.674Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、网络原理"><a href="#一、网络原理" class="headerlink" title="一、网络原理"></a>一、网络原理</h2><h3 id="1、HTTP与HTTPS的区别"><a href="#1、HTTP与HTTPS的区别" class="headerlink" title="1、HTTP与HTTPS的区别"></a>1、HTTP与HTTPS的区别</h3><p>HTTP：我们称为超文本传输协议，主要用来实现从网络传输超文本到本地浏览器，实现高效且准确的超文本传送。目前HTTP的版本为1.1<br>HTTPS：我们认为就是以安全为目标的HTTP通道，即在HTTP协议的基础上加入了SSL层，简称HTTPS。<br>SSL的主要作用分为以下两部分：<br>第一、为HTTP传输文件提供安全的传输通道<br>第二、确认网站的真实性，通过HTTPS访问的网站都需要获取到CA认证。</p>
+<h3 id="2、网络七层模型（了解）"><a href="#2、网络七层模型（了解）" class="headerlink" title="2、网络七层模型（了解）"></a>2、网络七层模型（了解）</h3><p>从下到上的顺序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">物理层</span><br><span class="line">数据链路层</span><br><span class="line">网络层</span><br><span class="line">传输层（TCP、UDP）</span><br><span class="line">会话层</span><br><span class="line">表示层</span><br><span class="line">应用层（HTTP FTP TFTP SMTP SNMP DNS TELNET HTTPS POP3 DHCP）</span><br></pre></td></tr></table></figure>
+<h3 id="3、HTTP的请求机制"><a href="#3、HTTP的请求机制" class="headerlink" title="3、HTTP的请求机制"></a>3、HTTP的请求机制</h3><p>第一，由客户端（浏览器）发出请求<br>第二，通过网络传输，到指定的服务器地址<br>第三，服务器接收相关请求，并进行解析<br>第四，服务器将最终的结果响应回客户端<br>第五，客户端接收到服务器响应后，通过浏览器解析，最终将内容进行展现</p>
+<h3 id="4、客户端访问服务器，发出请求，有四部分构成"><a href="#4、客户端访问服务器，发出请求，有四部分构成" class="headerlink" title="4、客户端访问服务器，发出请求，有四部分构成"></a>4、客户端访问服务器，发出请求，有四部分构成</h3><p>第一，请求方法（request method），默认为get方式。只有在表单提交和文件上传时为post方法。<br>第二，请求网址（request url），即在浏览器中输入的网路地址。<br>第三，请求头（request header），用来标识为一个浏览器正常的访问<br>第四，请求体（request body），用来传输到服务器端的相关数据</p>
+<h3 id="5、请求方法中get与post的区别"><a href="#5、请求方法中get与post的区别" class="headerlink" title="5、请求方法中get与post的区别"></a>5、请求方法中get与post的区别</h3><p>第一、使用get方式提交请求时，相关数据会作为url的参数被一起进行提交，我们可以直接在地址栏中观察到相关数据。而采用post方式请求的url不会包含这些数据，而是直接通过表单提交到服务器。<br>第二、get方式提交请求，对于提交的数据大小不能大于1024字节，而post方式提交数据，没有大小的限制。<br>总之，如果提交的信息比较敏感或者字节较大时，需要使用post方式；如果只是普通的请求使用get方式。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/15/py10_crawler/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-py09_class" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -843,93 +911,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/07/20/py03_dict&lesson/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-py04_Iterator&amp;generator" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/19/py04_Iterator&generator/">高级特性</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/19/py04_Iterator&generator/" class="archive-article-date">
-  	<time datetime="2018-07-19T09:52:43.157Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-range"><a href="#1-range" class="headerlink" title="1 range()"></a>1 range()</h2><p>range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。</p>
-<h2 id="2-列表推导式生成式"><a href="#2-列表推导式生成式" class="headerlink" title="2 列表推导式生成式"></a>2 列表推导式生成式</h2><p>格式：[表达式或函数  for x in 序列]<br>含义：通过生成式中的循环，逐一产生x值，表达式使用X值进行相关运算。最终结果作为列表的元素。也就意味着，循环多少次，就会产生多少个相关元素。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ [x**2 <span class="keyword">for</span> x <span class="keyword">in</span> range(10)]</span><br><span class="line"></span><br><span class="line">[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span><br></pre></td></tr></table></figure>
-<h2 id="3-迭代器（Iterator）"><a href="#3-迭代器（Iterator）" class="headerlink" title="3 迭代器（Iterator）"></a>3 迭代器（Iterator）</h2><p>1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter()和next()。<br>iter()用来创建一个迭代器，next()用来访问下一个元素。<br>目前我们所学的字符串、列表、元组都可以创建迭代器，那么他们也是可迭代化的对象。<br>迭代器两个步骤：<br>1、当调用next()函数，会将迭代器当前位置状态进行改变<br>2、会将下一个元素进行返回</p>
-<h3 id="迭代器的延迟作用"><a href="#迭代器的延迟作用" class="headerlink" title="迭代器的延迟作用"></a>迭代器的延迟作用</h3><p>迭代器生成的元素并不是在迭代器声明时，就准备好了的。通常时在调用迭代器需要提供该元素时生成的，也就是说只有在我们需要的时候迭代器才产生相关元素，不需要时并不会主动的生成相关元素。我们可以把迭代器看成一个容器，到我们需要时使用next()方法返回容器中的下一个值。<br>迭代器实现了工厂模式的对象，它在你每次访问下一个值的时候给你返回。</p>
-<h3 id="可迭代化（iterable）"><a href="#可迭代化（iterable）" class="headerlink" title="可迭代化（iterable）"></a>可迭代化（iterable）</h3><p>表明相关的对象可以创建迭代器对象，同时他们自身都是可以进行for数据遍历的。我们可以使用isinstance()来判断对象是否为可迭代化</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ from collections import Iterable</span><br><span class="line">$ string = <span class="string">'hello'</span></span><br><span class="line">$ <span class="built_in">print</span>(isinstance(string, Iterable))</span><br><span class="line"></span><br><span class="line">True</span><br></pre></td></tr></table></figure>
-<p>函数格式：isinstance(对象，类型)<br>返回值：布尔值<br>结果：如果指定的对象属于指定的类型，那么返回True，反之返回False</p>
-<p>enumerate()函数<br>函数格式：enumerate(iterable)<br>返回值：生成一个枚举对象<br>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ enum = enumberate([<span class="string">'one'</span>,<span class="string">'two'</span>,<span class="string">'three'</span>])</span><br><span class="line">$ <span class="keyword">for</span> i <span class="keyword">in</span> enum:</span><br><span class="line">$     <span class="built_in">print</span>(i)</span><br><span class="line">    </span><br><span class="line">(0, <span class="string">'one'</span>)</span><br><span class="line">(1, <span class="string">'two'</span>)</span><br><span class="line">(2, <span class="string">'three'</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">for</span> i,value <span class="keyword">in</span> enum:</span><br><span class="line">$     <span class="built_in">print</span>(i, value)</span><br><span class="line">   </span><br><span class="line">0 one</span><br><span class="line">1 two</span><br><span class="line">2 three</span><br></pre></td></tr></table></figure>
-<h2 id="4-生成器"><a href="#4-生成器" class="headerlink" title="4 生成器"></a>4 生成器</h2><h3 id="1、创建方式"><a href="#1、创建方式" class="headerlink" title="1、创建方式"></a>1、创建方式</h3><p>第一种，使用列表推导式，将[]改为()，生成一个generator对象<br>第二种，使用函数方式，采用yield关键字来实现</p>
-<h3 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h3><p>生成器我们通常可以认为一种特殊的迭代器，但是它不需要像迭代器一样去实现<strong>iter</strong>,<strong>next</strong>方法。只需要使用yield关键字，该关键字可以在每次调用生成器函数时起到暂停作用，并将其值进行返回。同时还会记录当前运行值的状态。</p>
-<h3 id="总结：迭代器和生成器"><a href="#总结：迭代器和生成器" class="headerlink" title="总结：迭代器和生成器"></a>总结：迭代器和生成器</h3><p>1、容器是一系列的元素集合，str、list、set、dict对象都可以看作是容器，容器都可以进行迭代（即用在while或for循环），凡是这样的容器我们都称为可迭代化对象（Iterable）。<br>2、可迭代化对象都实现了<strong>iter</strong>方法，该方法返回一个迭代器对象。<br>3、迭代器都拥有一个状态字段，用于记录下次迭代返回值。它实现了<strong>next</strong>和<strong>iter</strong>方法，迭代器不会一次性把所有的元素都加载到内存中，而是在需要的时候才生成返回结果。<br>4、生成器是一种特殊的迭代器，它的返回值不是通过return来返回的，而是通过yield来返回的。</p>
-<h3 id="案列"><a href="#案列" class="headerlink" title="案列"></a>案列</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">def gene(n):</span><br><span class="line">    i = 1000</span><br><span class="line">    no = <span class="string">''</span></span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'A'</span> == n:</span><br><span class="line">            no = <span class="string">'A'</span>+str(i)</span><br><span class="line">            yield no</span><br><span class="line">            i += 1</span><br><span class="line">        <span class="keyword">elif</span> <span class="string">'B'</span> == n:</span><br><span class="line">            no = <span class="string">'B'</span>+str(i)</span><br><span class="line">            yield no</span><br><span class="line">            i += 1</span><br><span class="line">        <span class="keyword">elif</span> <span class="string">'C'</span> == n:</span><br><span class="line">            no = <span class="string">'C'</span>+str(i)</span><br><span class="line">            yield no</span><br><span class="line">            i += 1</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pass</span><br><span class="line">f1 = gene(<span class="string">'A'</span>)</span><br><span class="line">f2 = gene(<span class="string">'B'</span>)</span><br><span class="line">f3 = gene(<span class="string">'C'</span>)</span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    hno = input(<span class="string">'请输入你要就诊的科室：'</span>)</span><br><span class="line">    name = input(<span class="string">'请输入你的姓名：'</span>)</span><br><span class="line">    msg = <span class="string">''</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">'A'</span> == hno:</span><br><span class="line">        msg = <span class="string">'姓名为&#123;&#125;，&#123;&#125;号的患者请到&#123;&#125;室就医'</span>.format(name,next(f1),hno)</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">'B'</span> == hno:</span><br><span class="line">        msg = <span class="string">'姓名为&#123;&#125;，&#123;&#125;号的患者请到&#123;&#125;室就医'</span>.format(name,next(f2),hno)</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">'C'</span> == hno:</span><br><span class="line">        msg = <span class="string">'姓名为&#123;&#125;，&#123;&#125;号的患者请到&#123;&#125;室就医'</span>.format(name,next(f3),hno)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        msg = <span class="string">'没有找到该科室！'</span></span><br><span class="line">    <span class="built_in">print</span>(msg)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">请输入你要就诊的科室：A</span><br><span class="line">请输入你的姓名：zhangsan</span><br><span class="line">姓名为zhangsan，A1000号的患者请到A室就医</span><br><span class="line">请输入你要就诊的科室：A</span><br><span class="line">请输入你的姓名：lisi</span><br><span class="line">姓名为lisi，A1001号的患者请到A室就医</span><br><span class="line">请输入你要就诊的科室：B</span><br><span class="line">请输入你的姓名：wangwu</span><br><span class="line">姓名为wangwu，B1000号的患者请到B室就医</span><br><span class="line">请输入你要就诊的科室：</span><br></pre></td></tr></table></figure>
-<h2 id="copy-浅拷贝-和deepcopy-（深拷贝）"><a href="#copy-浅拷贝-和deepcopy-（深拷贝）" class="headerlink" title="copy()(浅拷贝)和deepcopy()（深拷贝）"></a>copy()(浅拷贝)和deepcopy()（深拷贝）</h2><h3 id="1、浅拷贝"><a href="#1、浅拷贝" class="headerlink" title="1、浅拷贝"></a>1、浅拷贝</h3><p>我们使用copy()函数将列表中的元素，进行复制，通常对于普通的列表（一维）能够实现完全的值传递，即将自身的副本赋值给另外一个列表。<br>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls1 = [1,2,3,4,5]</span><br><span class="line">ls2 = ls1.copy()  <span class="comment"># 将ls1中的元素赋值给ls2,此时他们的值相等的</span></span><br><span class="line">ls1[3] = 6        <span class="comment">#此时，对ls1中索引位3的值进行修改，变为6</span></span><br></pre></td></tr></table></figure>
-<p>观察其结果，我们可以发现ls1 =&gt; [1,2,3,6,5],但是ls2 =&gt;[1,2,3,4,5]没有发生改变<br>一旦，ls1的列表元素结构发生变化，出现子列表嵌套。<br>如：ls1 = [1,2,3,[‘one’,’two’],5]，这是再使用copy()对ls2赋值，我们进行如下修改：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls1 = [1,2,3,[<span class="string">'one'</span>,<span class="string">'two'</span>],5]</span><br><span class="line">ls2 = ls1.copy()</span><br><span class="line">ls1[3][0] = <span class="string">'three'</span></span><br></pre></td></tr></table></figure>
-<p>我们观察其结果，可以发现ls1 =&gt; [1,2,3,[‘three’,’two’],5],同时ls2也会随之变化 ls2 =&gt; [1,2,3,[‘three’,’two’],5]。<br>总结：这种现象我们成为浅拷贝，copy()函数进行组合数据类型拷贝时，只能控制第一层元素进行值传递，一旦出现嵌套的子列表、子字典等内容，将不再拷贝其内容的值，而是直接将这个嵌套的内存地址，赋值给ls2。所以会造成一旦原列表改变子列表内容后，目标列表中对应的子列表也发生改变。</p>
-<h3 id="2、深拷贝"><a href="#2、深拷贝" class="headerlink" title="2、深拷贝"></a>2、深拷贝</h3><p>我们需要引入copy这个模块，调用deepcopy()函数。写法如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import copy</span><br><span class="line">ls1 = [1,2,3,[<span class="string">'one'</span>,<span class="string">'two'</span>],5]</span><br><span class="line">ls2 = copy.deepcopy(ls1)</span><br><span class="line">ls1[3][0] = <span class="string">'three'</span></span><br></pre></td></tr></table></figure>
-<p>此时，我们发现ls1内容发生改变后，但是ls2并没有随之改变，那么也就是意味着deepcopy()将ls1中内容，包括嵌套里面的元素都进行了副本赋值，给ls2。因此，他们只是值相同，并没有指向同一个内存地址。</p>
-<h3 id="sort-与sorted"><a href="#sort-与sorted" class="headerlink" title="sort()与sorted()"></a>sort()与sorted()</h3><p>1、sort()函数提供排序功能，同时该排序是实现了永久性排序，即会改变原有列表的元素位置。<br>2、sorted()函数提供排序功能，但是该排序进行了临时性排序，即只是产生一个有序结果，并不会真正改变原列表中元素的位置。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/19/py04_Iterator&generator/">展开全文 >></a>
         </p>
       
 
