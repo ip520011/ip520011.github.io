@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 老阳的技术博客</title>
+  <title>网络爬虫--requests库 | 老阳的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老阳的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/page/2/index.html">
+  <meta name="description" content="1、常用方法1）函数格式：requests.get(url,[param], **kvw)参数说明:url：指定爬取的网络地址param：需要传递的参数，参数格式：字典或字节流返回值：response对象属性：status_code:状态码headers:头信息text：抓取到的页面内容encoding：页面的编码格式（从headers获取到）apparent_encoding：页面的编码格式（从">
+<meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络爬虫--requests库">
+<meta property="og:url" content="http://yoursite.com/2018/08/20/py10_requests/index.html">
 <meta property="og:site_name" content="老阳的技术博客">
+<meta property="og:description" content="1、常用方法1）函数格式：requests.get(url,[param], **kvw)参数说明:url：指定爬取的网络地址param：需要传递的参数，参数格式：字典或字节流返回值：response对象属性：status_code:状态码headers:头信息text：抓取到的页面内容encoding：页面的编码格式（从headers获取到）apparent_encoding：页面的编码格式（从">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-20T03:47:23.420Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老阳的技术博客">
+<meta name="twitter:title" content="网络爬虫--requests库">
+<meta name="twitter:description" content="1、常用方法1）函数格式：requests.get(url,[param], **kvw)参数说明:url：指定爬取的网络地址param：需要传递的参数，参数格式：字典或字节流返回值：response对象属性：status_code:状态码headers:头信息text：抓取到的页面内容encoding：页面的编码格式（从headers获取到）apparent_encoding：页面的编码格式（从">
   
     <link rel="alternative" href="/atom.xml" title="老阳的技术博客" type="application/atom+xml">
   
@@ -155,295 +159,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-py10_requests" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      网络爬虫--requests库
+    </h1>
+  
+
+        
+        <a href="/2018/08/20/py10_requests/" class="archive-article-date">
+  	<time datetime="2018-08-20T03:43:11.521Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、常用方法"><a href="#1、常用方法" class="headerlink" title="1、常用方法"></a>1、常用方法</h2><p>1）函数格式：requests.get(url,[param], **kvw)<br>参数说明:<br>url：指定爬取的网络地址<br>param：需要传递的参数，参数格式：字典或字节流<br>返回值：response对象<br>属性：<br>status_code:状态码<br>headers:头信息<br>text：抓取到的页面内容<br>encoding：页面的编码格式（从headers获取到）<br>apparent_encoding：页面的编码格式（从网页内容中获取到）<br>content：二进制形式的信息<br>注意：text属性返回的页面信息，是根据encoding来显示的。所以我们在使用requests抓取页面信息时，将encoding属性进行设置，通常设为utf-8。</p>
+<p>get()函数代表了发出一个request请求，而requests.get()表示返回一个response对象</p>
+<p>2）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">requests.request(<span class="string">'GET'</span>,url, **kvw)</span><br><span class="line">requests.request(<span class="string">'HEAD'</span>,url, **kvw)</span><br><span class="line">requests.request(<span class="string">'POST'</span>,url, **kvw)</span><br><span class="line">requests.request(<span class="string">'PUT'</span>,url, **kvw)</span><br><span class="line">requests.request(<span class="string">'PATCH'</span>,url, **kvw)</span><br><span class="line">requests.request(<span class="string">'DELETE'</span>,url, **kvw)</span><br></pre></td></tr></table></figure>
+<p>**kvw:控制访问的参数，为可选项<br>params:字典或字节流，作为参数添加到url中（get方法使用）<br>data：字典、字节流或文件对象（post方法使用）<br>json：JSON格式数据，作为request的内容<br>headers：字典，HTTP头信息<br>cookies：字典或cookie jar，存在于request的cookie中<br>auth：元组，支持HTTP认证<br>files：字典类型，传输文件<br>timeout：设定超时时间，秒为单位<br>stream：True/False，默认为True。获取内容立即下载。<br>cert：本地SSL整数路径<br>verfiy：True/False，默认为True。认证SSL开关<br>allow_redirects：True/False,默认为True，重定向开发</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/25/py05_log/" class="archive-article-date">
-  	<time datetime="2018-07-25T12:20:01.471Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/25/py05_log/">日志的创建</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/20/py10_requests/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/25/py05_def/" class="archive-article-date">
-  	<time datetime="2018-07-25T12:01:06.006Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/08/20/py10_html/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          网络爬虫--HTML网页结构
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/20/py10_urllib/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网络爬虫--urllib库</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/25/py05_def/">函数</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/20/py03_dict&lesson/" class="archive-article-date">
-  	<time datetime="2018-07-20T00:47:16.640Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/20/py03_dict&lesson/">购买商品</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/py04_Iterator&generator/" class="archive-article-date">
-  	<time datetime="2018-07-19T09:52:43.157Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/py04_Iterator&generator/">高级特性</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/py01_int/" class="archive-article-date">
-  	<time datetime="2018-07-19T04:52:57.926Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/py01_int/">基本数据类型--整型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/py01_str/" class="archive-article-date">
-  	<time datetime="2018-07-19T04:47:08.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/py01_str/">基本数据类型--字符串</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/py03_set/" class="archive-article-date">
-  	<time datetime="2018-07-19T01:29:44.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/py03_set/">组合数据类型--set</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/py03_dict/" class="archive-article-date">
-  	<time datetime="2018-07-19T01:17:18.698Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/py03_dict/">组合数据类型--dict</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/py03_list&tuple/" class="archive-article-date">
-  	<time datetime="2018-07-17T13:32:30.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/py03_list&tuple/">组合数据类型--list&amp;tuple</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/py02_github/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:41:18.997Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/py02_github/">关于重装系统之后恢复github的操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2018/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -467,8 +344,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
