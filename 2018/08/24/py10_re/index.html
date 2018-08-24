@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 老阳的技术博客</title>
+  <title>正则表达式 | 老阳的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老阳的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+  <meta name="description" content="1、正则表达式的概念正则表达式就是使用一些特定的表达式，来表示符合其规范的字符串。 2、常用操作符1234567^:^ab,代表着必须是ab开头，[^ab]代表不能是a或b开头$:表示字符串结尾，放在正则表达式的结尾[]：代表了值域的范围，例如：[0-9][a-z]&amp;#123;&amp;#125;：代表了字符出现的次数,例如：&amp;#123;n&amp;#125;代表了出现n次，&amp;#123;n,m&amp;#125;代表出现">
+<meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://yoursite.com/2018/08/24/py10_re/index.html">
 <meta property="og:site_name" content="老阳的技术博客">
+<meta property="og:description" content="1、正则表达式的概念正则表达式就是使用一些特定的表达式，来表示符合其规范的字符串。 2、常用操作符1234567^:^ab,代表着必须是ab开头，[^ab]代表不能是a或b开头$:表示字符串结尾，放在正则表达式的结尾[]：代表了值域的范围，例如：[0-9][a-z]&amp;#123;&amp;#125;：代表了字符出现的次数,例如：&amp;#123;n&amp;#125;代表了出现n次，&amp;#123;n,m&amp;#125;代表出现">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-24T00:38:52.222Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老阳的技术博客">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="1、正则表达式的概念正则表达式就是使用一些特定的表达式，来表示符合其规范的字符串。 2、常用操作符1234567^:^ab,代表着必须是ab开头，[^ab]代表不能是a或b开头$:表示字符串结尾，放在正则表达式的结尾[]：代表了值域的范围，例如：[0-9][a-z]&amp;#123;&amp;#125;：代表了字符出现的次数,例如：&amp;#123;n&amp;#125;代表了出现n次，&amp;#123;n,m&amp;#125;代表出现">
   
     <link rel="alternative" href="/atom.xml" title="老阳的技术博客" type="application/atom+xml">
   
@@ -155,133 +159,173 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-py10_re" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      正则表达式
+    </h1>
+  
+
+        
+        <a href="/2018/08/24/py10_re/" class="archive-article-date">
+  	<time datetime="2018-08-24T00:34:01.594Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-24</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、正则表达式的概念"><a href="#1、正则表达式的概念" class="headerlink" title="1、正则表达式的概念"></a>1、正则表达式的概念</h2><p>正则表达式就是使用一些特定的表达式，来表示符合其规范的字符串。</p>
+<h2 id="2、常用操作符"><a href="#2、常用操作符" class="headerlink" title="2、常用操作符"></a>2、常用操作符</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">^:^ab,代表着必须是ab开头，[^ab]代表不能是a或b开头</span><br><span class="line">$:表示字符串结尾，放在正则表达式的结尾</span><br><span class="line">[]：代表了值域的范围，例如：[0-9][a-z]</span><br><span class="line">&#123;&#125;：代表了字符出现的次数,例如：&#123;n&#125;代表了出现n次，&#123;n,m&#125;代表出现了n到m次</span><br><span class="line">*:代表了字符出现0-n次</span><br><span class="line">+：代表了字符出现1-n次</span><br><span class="line">？：代表了字符出现0-1次</span><br></pre></td></tr></table></figure>
+<h2 id="3、常用方法"><a href="#3、常用方法" class="headerlink" title="3、常用方法"></a>3、常用方法</h2><p>1）search()：会在指定的字符串中查找，是否有匹配正则表达式的内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">函数格式：search(pattern, str)</span><br><span class="line">参数说明：</span><br><span class="line">pattern：正则表达式</span><br><span class="line">str：字符串</span><br><span class="line">返回值：match对象，可以通过match.group(0)返回匹配正则表达式的内容</span><br></pre></td></tr></table></figure>
+<p>2）match():会从字符串的开始进行匹配</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数格式：match(pattern, str) </span><br><span class="line">返回值：match对象</span><br></pre></td></tr></table></figure>
+<p>3）findall():会从指定的字符串中，匹配所有满足正则表达式的内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数格式：findall(pattern,str)</span><br><span class="line">返回值：返回所有匹配的内容，以列表形式。</span><br></pre></td></tr></table></figure>
+<p>4）split():根据字符串匹配正则表达式的情况来切分</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">函数格式：split(pattern, str, maxsplit)</span><br><span class="line">maxsplit：最大切分次数，剩余部分将作为一个整体输出</span><br><span class="line">返回值：将切分后的字符串，以列表形式返回</span><br></pre></td></tr></table></figure>
+<p>5）finditer():根据字符串匹配正则表达式，返回一个迭代对象，其中的每一个对象都是match对象</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数格式：finditer(pattern,str)</span><br><span class="line">返回值：返回迭代对象，其中每个对象都是match类型</span><br></pre></td></tr></table></figure>
+<p>6）sub():根据正则表达式，将指定的字符串内容替换</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">函数格式：sub(pattern, repl, string, count)</span><br><span class="line">参数说明：</span><br><span class="line">repl：替换匹配字符串的字符串</span><br><span class="line">count：匹配的最大次数</span><br><span class="line">返回值：返回替换后的字符串</span><br></pre></td></tr></table></figure>
+<p>7）compile():生成正则表达式对象</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数格式：compile(pattern)</span><br><span class="line">返回值：返回一个正则表达式对象</span><br></pre></td></tr></table></figure>
+<h2 id="4、match对象"><a href="#4、match对象" class="headerlink" title="4、match对象"></a>4、match对象</h2><p>1）match对象属性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string：待匹配的字符串</span><br><span class="line">pos：匹配文本的开始位置</span><br><span class="line">endpos：匹配文件的结束位置</span><br><span class="line">re：正则表达式</span><br></pre></td></tr></table></figure>
+<p>2）match方法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">group(0)：获得匹配后的字符串</span><br><span class="line">start()：返回文本开始的位置</span><br><span class="line">end()：返回文本结束的位置</span><br><span class="line">span()：返回文本开始，结束的位置，以元组的形式返回</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/py03_list&tuple/" class="archive-article-date">
-  	<time datetime="2018-07-17T13:32:30.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/py03_list&tuple/">组合数据类型--list&amp;tuple</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/24/py10_re/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/py02_github/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:41:18.997Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/24/py10_bs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">beautiful soup库</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/py02_github/">关于重装系统之后恢复github的操作</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/py02_if&for&while/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:26:37.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/py02_if&for&while/">控制语句--条件&amp;循环</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/py01_Integral/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:26:37.704Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/py01_Integral/">常量&amp;变量</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
   
 
 
@@ -305,8 +349,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

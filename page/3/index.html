@@ -157,6 +157,187 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-py03_list&amp;tuple" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/17/py03_list&tuple/">组合数据类型--list&amp;tuple</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/17/py03_list&tuple/" class="archive-article-date">
+  	<time datetime="2018-07-17T13:32:30.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="List列表"><a href="#List列表" class="headerlink" title="List列表"></a>List列表</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h3><p>List数据，首先它可以存储各种数据类型，比如：数值、字符串、布尔型等等；其次，列表中的元素可以随时进行删除、修改、增加，其长度随之变化；同时，列表也是有序的，我们同样可以使用循环对其进行遍历。</p>
+<h3 id="2-声明与赋值"><a href="#2-声明与赋值" class="headerlink" title="2 声明与赋值"></a>2 声明与赋值</h3><p>1、声明列表同时进行赋值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1,2,3,4,5]</span><br><span class="line">list2 = [<span class="string">'one'</span>,<span class="string">'two'</span>,<span class="string">'three'</span>]</span><br><span class="line">list3 = [1,<span class="string">'two'</span>,3,<span class="string">'four'</span>]</span><br></pre></td></tr></table></figure>
+<p>我们通过观察，可以发现列表是有序的。那么通过for  in  方式可以对其进行快速遍历<br>比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> list1:</span><br><span class="line">    <span class="built_in">print</span>(item,end=<span class="string">' '</span>)</span><br><span class="line">1 2 3 4 5</span><br></pre></td></tr></table></figure>
+<p>2、声明一个空列表，后续进行添加元素<br>list1 = list()   此时，python会生成一个空列表,即：[]<br>注意，生成的这个空列表中没有任何值，它的长度为0<br>3、列表的操作<br>1）增加元素<br>第一种，使用append()函数，在列表的尾部追加一个新元素。<br>函数格式：list.append(元素)<br>返回值：列表长度+1</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1.append(6)</span><br><span class="line">[1, 2, 3, 4, 5, 6]</span><br></pre></td></tr></table></figure>
+<p>注意，该方法添加元素都是在列表的尾部。<br>第二种，使用extend()函数，在列表尾部，追加一个子列表内容<br>函数格式：list.extend(子列表)<br>返回值：列表长度+n</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sublist = [7,8,9]</span><br><span class="line">list1.extend(sublist)</span><br><span class="line">[1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br></pre></td></tr></table></figure>
+<p>第三种，使用“+”运算符，连接两个列表，其结果会生成一个新的列表。同时原来两个列表不变。<br>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sublist</span><br><span class="line">[7, 8, 9]</span><br><span class="line">&gt;&gt;&gt; list3</span><br><span class="line">[1, 2, 3, 4, 5]</span><br><span class="line">&gt;&gt;&gt; list3+sublist</span><br><span class="line">[1, 2, 3, 4, 5, 7, 8, 9]</span><br><span class="line">&gt;&gt;&gt; list3</span><br><span class="line">[1, 2, 3, 4, 5]</span><br><span class="line">&gt;&gt;&gt; sublist</span><br><span class="line">[7, 8, 9]</span><br></pre></td></tr></table></figure>
+<p>第四种，使用insert()函数，对列表指定位置进行插入操作。<br>函数格式：list.insert(idx，元素),其中：idx代表要插入的索引位<br>返回值：列表长度+1</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1.insert(4,<span class="string">'four'</span>)</span><br><span class="line">[1, 2, 3, 4, <span class="string">'four'</span>, 5, 6, 7, 8, 9]</span><br></pre></td></tr></table></figure>
+<p>注意：插入指定的索引位后，原索引位所在的元素下标+1<br>我们在实际使用的时候，通常会利用append或extend来实现元素的追加，而少用insert进行元素的插入。因为在频繁的插入操作，需要耗费大量的内存来维护列表的索引关系。<br>2）修改元素<br>通过索引位，找到指定的列表元素，重新对其进行赋值即可完成修改操作。<br>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list1=&gt;[1, 2, 3]</span><br><span class="line">list1[2] = 5</span><br><span class="line">[1, 2, 5]</span><br></pre></td></tr></table></figure>
+<p>3)删除元素<br>第一种，remove()移除在列表中指定的元素<br>函数格式：list.remove(元素)<br>返回值：移除元素后的列表，长度-1<br>第二种，pop()有两种使用模式<br>list.pop()：默认模式，从列表的尾部弹出一个元素<br>返回值：返回所弹出的元素本身。如果列表已经为空，执行pop()程序会报错提示：列表为空。<br>list.pop(idx):idx指定的下表索引位置。<br>此处pop()与remove()类似，但是区别在于pop()会将移除的元素返回。<br>第三种，使用del删除指定的列表片段或列表本身</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">del list[idx]        删除指定索引位对应的元素</span><br><span class="line">del list             删除整个列表，同时释放该列表所占用的内存空间</span><br><span class="line">del list[star:end]   删除指定的列表片段</span><br></pre></td></tr></table></figure>
+<p>del与clear()的区别</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">del list VS list.clear()</span><br><span class="line">1、del 可以将列表的内容进行删除，同时将列表所占内存进行释放。</span><br><span class="line">2、clear()只是将列表中的内容进行清空，原列表内容为空。</span><br></pre></td></tr></table></figure>
+<p>+与*运算符<br>在列表中我们使用+运算符，可以将两个列表进行连接，生成一个新的列表。<br>比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1,2,3]  </span><br><span class="line">list2 = [4,5,6]  </span><br><span class="line">list1+list2=&gt;[1,2,3,4,5,6]</span><br></pre></td></tr></table></figure>
+<p>使用*运算符，可以将目标列表的内容重复N次，并生成一个新的列表。<br>比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1,2,3] </span><br><span class="line">list1*2=&gt;[1,2,3,1,2,3]</span><br></pre></td></tr></table></figure>
+<p>max()与min()<br>函数格式：max(list)、min(list)<br>返回值：返回该列表中最大值或最小值。<br>注意：该函数在使用时，必须要求所统计的列表中元素的数据类型要一致。不支持多数据类型，数值型根据数值本身大小取值，字符串类型根据字母的ASCII码值取值，布尔值根据对应的1、0取值。</p>
+<p>sum()<br>函数格式：sum(list)<br>返回值：将列表中所用的数值进行求和运算，返回结果。注意，该函数只能用于数值型列表。<br>sort()排序<br>函数格式：list.sort()、list.sort(reverse=True)<br>返回值：默认情况下，将原列表中元素按照升序进行排序,<br>如果设置了反转参数为True，那么将原列表中的元素按照降序排列</p>
+<p>sorted()排序<br>函数格式：sorted(list)、sorted(list,reverse=True)<br>返回值：默认情况下，将原列表中元素按照升序进行排序,<br>如果设置了反转参数为True，那么将原列表中的元素按照降序排列<br>注意：上面两种排序函数，其中第一个属于列表自身的排序方法，而第二种属于python内置的排序方法，也就是说第二种可以应用在包括列表在内多种集合排序。</p>
+<p>count()计数函数<br>函数格式：list.count(元素)<br>返回值：返回指定元素在列表中出现的次数</p>
+<p>in 关键字<br>判断指定的元素是否在列表中存在，如果存在返回True，否在返回False</p>
+<p>index()检索函数<br>函数格式：list.index(元素)<br>返回值：返回该元素在列表中的索引位置，如果不存在报错。</p>
+<p>常用数据类型的转换<br>字符串转为整型：int(str)<br>函数格式：int(str)<br>返回值：将字符型数值转为整数<br>int(‘3’) =&gt; 3<br>字符串转为浮点型:float(str)<br>函数格式：float(str)<br>返回值：将字符型浮点数转为浮点数<br>float(‘2.4’) =&gt; 2.4<br>数值转为字符串：str(int)、str(float)<br>函数格式：str(int)、str(float)<br>返回值：将整数或浮点数，转为字符型数值<br>str(2) =&gt; ‘2 ‘    str(2.4) =&gt; ‘2.4’<br>字符串转为列表：list(str)<br>函数格式：list(str)<br>返回值：将指定的字符串，按照元素顺序逐一转为列表<br>string1 = ‘hello world’<br>list1 = list(string1)</p>
+<p>列表比较运算符操作<br>相当于列表使用普通的比较运算符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import operator</span><br><span class="line">operator.ge()         大于等于   &gt;=</span><br><span class="line">operator.gt()         大于       &gt;</span><br><span class="line">operator.eq()       等于         ==</span><br><span class="line">operator.ne()        不等于      !=</span><br><span class="line">operator.le()           小于等于 &lt;=</span><br><span class="line">operator.lt()          小于      &lt;</span><br></pre></td></tr></table></figure>
+<p>格式：operator.ge(列表1,列表2)<br>返回值：如果符合条件，返回True，反之，返回False</p>
+<p>[‘h’, ‘e’, ‘l’, ‘l’, ‘o’, ‘ ‘, ‘w’, ‘o’, ‘r’, ‘l’, ‘d’]<br>拆分字符串：str.split(分隔符)<br>函数格式：str.split(分隔符)<br>返回值：将字符串，根据指定的分隔符，转换为列表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">"锅包肉 肠粉 毛血旺 宫保鸡丁"</span></span><br><span class="line">list2 = string1.split(<span class="string">' '</span>)</span><br><span class="line">list2</span><br><span class="line">[<span class="string">'锅包肉'</span>, <span class="string">'肠粉'</span>, <span class="string">'毛血旺'</span>, <span class="string">'宫保鸡丁'</span>]</span><br></pre></td></tr></table></figure>
+<p>列表转为字符串：’分隔符’.join(list)<br>函数格式:’分隔符’.join(list)<br>返回值：将指定的列表中的元素，通过分隔符进行连接，转换为字符串</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list2 = [<span class="string">'锅包肉'</span>, <span class="string">'肠粉'</span>, <span class="string">'毛血旺'</span>, <span class="string">'宫保鸡丁'</span>]</span><br><span class="line"> <span class="string">' '</span>.join(list2)</span><br><span class="line"><span class="string">'锅包肉 肠粉 毛血旺 宫保鸡丁'</span></span><br></pre></td></tr></table></figure>
+<p>冒泡排序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">list1 = [80,100,67,1,34,10]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> range(len(list1)):</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(m+1,len(list1)):</span><br><span class="line">        first = list1[m]</span><br><span class="line">        second = list1[n]</span><br><span class="line">        <span class="keyword">if</span> first &lt; second:</span><br><span class="line">            list1[m] = list1[n]</span><br><span class="line">            list1[n] = first</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
+<h2 id="Tuple元组"><a href="#Tuple元组" class="headerlink" title="Tuple元组"></a>Tuple元组</h2><h3 id="1-元组的概念"><a href="#1-元组的概念" class="headerlink" title="1 元组的概念"></a>1 元组的概念</h3><p>元组是值的有序序列，里面可以存储各种数据类型的元素。但是元组一旦被赋值后，其内容就不可被改变。</p>
+<h3 id="2-声明与赋值-1"><a href="#2-声明与赋值-1" class="headerlink" title="2 声明与赋值"></a>2 声明与赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第一种，tup = a,b,c,d</span><br><span class="line">第二种，tup = (a,b,c,d) 推荐使用该种声明方式。</span><br><span class="line">第三种，tup = tuple() 声明一个空的元组对象</span><br><span class="line">注意：元组在赋值时，且元素只有一个时，具体情况如下：</span><br><span class="line">tuple1 = (1,)或tuple1 = 1,一定要在元素后面加上一个,号，与普通变量赋值进行区分。</span><br></pre></td></tr></table></figure>
+<h3 id="3-常用操作"><a href="#3-常用操作" class="headerlink" title="3 常用操作"></a>3 常用操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+、*、<span class="keyword">in</span>、遍历等等，参考列表。</span><br></pre></td></tr></table></figure>
+<h3 id="4-元组与列表转换"><a href="#4-元组与列表转换" class="headerlink" title="4 元组与列表转换"></a>4 元组与列表转换</h3><p>元组转为列表：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tuple1 = (1,2,3)</span><br><span class="line">list1 = list(tuple1)</span><br></pre></td></tr></table></figure>
+<p>列表转为元组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1,2,3]</span><br><span class="line">tuple1 = tuple(list1)</span><br></pre></td></tr></table></figure>
+<h4 id="请描述unicode-utf-8-gbk等编码之间的关系？"><a href="#请描述unicode-utf-8-gbk等编码之间的关系？" class="headerlink" title="请描述unicode,utf-8,gbk等编码之间的关系？"></a>请描述unicode,utf-8,gbk等编码之间的关系？</h4><p>(1)Unicode编码是计算机所能识别的字节编码格式，所有格式的编码都需要最终转换为Unicode编码。<br>(2)utf-8编码是目前互联网进行数据传递，内容展现的通用编码格式，它解决了因为操作系统编码格式不同的问题，导致在不同系统中无法正确显示内容的情况。<br>(3)gbk编码是中文编码，主要用来在中文操作系统上正确显示中文内容的编码集。<br>它们三个都是编码格式，其中utf-8与Gbk最终都要解释成Unicode编码后，进行执行，同时，在现在的互联网应用中，为了统一编码格式，进行正确的内容展现，我们通过对文件的编码使用utf-8来代替gbk，这样解决了操作系统出现乱码的情况。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/17/py03_list&tuple/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-py02_github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/14/py02_github/">关于重装系统之后恢复github的操作</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/14/py02_github/" class="archive-article-date">
+  	<time datetime="2018-07-14T08:41:18.997Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>生活中，总是遇到各种问题，然后重装系统。可是重装后，电脑里的github各项配置没啦，每次在重新配置急需要半天，很烦。所以就记录一下本次配置内容，以便自己备用，也方便新手学习。此文是针对于windows环境下node.js+github搭建，并且提前将自己的本地仓库拷贝出去的博客。</p>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>因为我们之前已经配置过github，在重装系统之后，我们拷出的本地仓库配置并没有变化，只是少了与node.js的关联，此时，我们只需要将node.js关联一下即可。</p>
+<p>1.首先要安装git,这里就不多说了，默认大家都已安装完毕。</p>
+<p>2.其次，安装node.js。这里跟之间的一样。</p>
+<p>3.将本地仓库放在磁盘的根目录下（我的仓库名为hexo），我们在自己的本地仓库位置（E:\hexo）打开终端Git Bash Here,此时已从终端进入你的仓库位置</p>
+<p>4.我们用cd blog 进入了E:\hexo\blog目录，由于我们的本地仓库以前已经配制过，这时我们只需要在E:\hexo\blog目录敲：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>此时，你的桌面会弹出一个来自node.js的询问窗口，点击允许访问，此时我们在浏览器输入<a href="http://localhost:4000访问本地git，这时已经能进去了。这时，我们需要执行行这段脚本（$" target="_blank" rel="noopener">http://localhost:4000访问本地git，这时已经能进去了。这时，我们需要执行行这段脚本（$</a> ./deploy.sh），我们发现已经可以把东西上传上去了。</p>
+<p>如果没有上传，我们查看一下环境变量，在path中写入E:\hexo\node_modules\hexo\bin<br>此时，在重复上述操作即可。</p>
+<p>配置用户名和用户邮件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"you@example.com"</span></span><br><span class="line">git config --global user.name <span class="string">"Your Name"</span></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/14/py02_github/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-py02_if&amp;for&amp;while" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
