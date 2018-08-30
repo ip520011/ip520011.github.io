@@ -157,6 +157,155 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-py08_error" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/03/py08_error/">异常</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/03/py08_error/" class="archive-article-date">
+  	<time datetime="2018-08-03T00:38:31.470Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1）概念："><a href="#1）概念：" class="headerlink" title="1）概念："></a>1）概念：</h2><p>指因程序出错在正常的执行流程之外，采取的行为。异常是一个事件，会在程序的执行过程中执行，并影响程序的执行。</p>
+<h2 id="2）异常的阶段"><a href="#2）异常的阶段" class="headerlink" title="2）异常的阶段"></a>2）异常的阶段</h2><p>第一、产生异常（比如：代码错误、业务逻辑错误）<br>第二、处理异常（比如：将异常提示更加可理解、增强代码的健壮性）</p>
+<h2 id="3）常见的异常类"><a href="#3）常见的异常类" class="headerlink" title="3）常见的异常类"></a>3）常见的异常类</h2><p>Exception：Python中所有异常的父类。<br>NameError：访问了一个未声明的变量。<br>keyError:访问一个不存在的字典key<br>IndexError：索引超出序列的范围<br>ValueError：传给函数的参数类型不正确。<br>IOError：文件操作时输入输出错误</p>
+<h2 id="4）异常处理流程"><a href="#4）异常处理流程" class="headerlink" title="4）异常处理流程"></a>4）异常处理流程</h2><p>基本语法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try：</span><br><span class="line">   可能会产生异常的代码</span><br><span class="line">except  对应的异常 as 别名：</span><br><span class="line">   异常处理语句</span><br></pre></td></tr></table></figure>
+<p>说明：在try中，放置可能会产生错误的相关代码；except后标明对应的异常类型，一旦try中产生相关异常，except后声明的异常类能够对应捕获，执行相关异常处理语句。如果try外面后续还要其他语句，会继续执行。在产生异常是，出现异常的语句后，如果还有其他语句则不会执行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">   可能会产生异常的代码</span><br><span class="line">except 对应的异常 as 别名：</span><br><span class="line">   异常处理语句</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">   程序代码</span><br></pre></td></tr></table></figure>
+<p>说明：在此结构中，如果try中的代码出现异常，则使用except后面声明的异常类进行捕获处理，如果没有异常出现，则执行else内部的代码。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">   可能会产生异常的代码</span><br><span class="line">except 对应的异常 as 别名：</span><br><span class="line">    异常处理语句</span><br><span class="line">except 对应的异常 as 别名：</span><br><span class="line">    异常处理语句</span><br></pre></td></tr></table></figure>
+<p>说明：当try中有多行代码可能会出现不同的异常，那么使用多个except与之对应，根据产生异常的顺序来依次捕获处理。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try：</span><br><span class="line">   可能会出产生异常的代码</span><br><span class="line">except 对应的异常 as 别名：</span><br><span class="line">   异常处理语句</span><br><span class="line">finally：</span><br><span class="line">   代码</span><br></pre></td></tr></table></figure>
+<p>说明：当异常捕获处理流程中，使用了finally来控制，表明不管是否出现异常进行捕获，最后代码都将允许finally内部的语句。<br>注意：finally中的语句，不管前面的代码出现何种操作，比如：break、return、exit等都会执行完finally内部的代码后，才会实现。</p>
+<p>5）异常的分类</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在Python中所有的异常都继承自BaseExcept,如下：</span><br><span class="line">          |------&gt;KeyboardInterrupt（键盘中断异常） </span><br><span class="line">          |</span><br><span class="line">BaseExcept|------&gt;SystemExit(系统退出异常)</span><br><span class="line">          |</span><br><span class="line">          |------&gt;Except（其他所有异常的父类）</span><br></pre></td></tr></table></figure>
+<p>其中：keyboardInterrupt在使用强制中断程序时产生。<br>SystemExit在使用sys.exit()函数时产生。</p>
+<p>6）主动抛出异常<br>raise 异常类对象实例或自定义异常类实例<br>raise IOError(‘IO 错误’)</p>
+<p>7）finally的替换写法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">with open(<span class="string">'myfile.txt'</span>,<span class="string">'r'</span>) as f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        <span class="built_in">print</span>(line)</span><br></pre></td></tr></table></figure>
+<p>其中打开的文件对象f，在执行完内容的读取后，被强制性关闭。及时在读取过程中，出现错误，也会被关闭。<br>8）使用异常机制的优势<br>第一，把错误控制与业务逻辑进行区分，增强程序的可读性和健壮性。<br>第二，代码结构更加清晰，复杂的业务流程的实现更加便利<br>第三，程序的容错性更强，不会因为一个小bug导致整体崩溃。</p>
+<p>9）assert 断言<br>语法格式：assert 表达式，断言内容。代码如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    assert 1==2,<span class="string">'1 不等于 2'</span></span><br><span class="line">except AssertionError as ae:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'&#123;&#125;&#123;&#125;'</span>.format(ae.__class__.__name__, ae))</span><br></pre></td></tr></table></figure>
+<p>如果断言表达式为真，则正常执行，如果不为真，则返回断言内容，作为异常捕获的输出结果。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/03/py08_error/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-py07_pack&amp;py" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/02/py07_pack&py/">包与模块</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/02/py07_pack&py/" class="archive-article-date">
+  	<time datetime="2018-08-02T00:26:04.409Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1）模块"><a href="#1）模块" class="headerlink" title="1）模块"></a>1）模块</h2><p>基本概念：在Python中进行Python定义和声明的文件，以.py结尾。使用import或from   import导入的文件，我们成为模块。<br>2）模块的优势<br>首先，使用模块，可以将常用的功能和变量，统一分类存储在不同的文件中，在使用时进行导入。提供了代码的可维护性。<br>其次，使用模块因为将常用功能进行了统一调用，提供了代码的复用性<br>最后，解决了在同一个文件中，方法和变量重名的问题。<br>3）导入时的问题<br>如果导入了与文件同名的函数（方法名相同，函数个数相同）时，需要使用模块名调用函数，与文件中的函数进行区分，例如：<br>import my<br>my.show()<br>def show():<br>  pass<br>show()<br>4)模块可以在Python文件中，实现多次import导入，但是只有第一次导入时才真正将模块中的内容运行、方法载入，其他再进行导入时，Python解析器会先检测是否已经载入该模块，如果载入就不在执行相关操作。<br>总结：<br>模块载入一共分三个步骤：<br>1、为模块的导入，创建命名空间（划分新的内存地址），被载入的文件按照全局作用域来使用。<br>2、模块载入后，将在上一步操作中创建的命名空间中，执行模块中的代码<br>3、创建一个模块的名字，来引用模块所在的命名空间。my.show()</p>
+<p>5)当使用from  import引入多个模块时，同时多个模块存在同名函数，那么在程序中调用该函数时，以程序导入的最后一个模块的函数为准。</p>
+<h2 id="包："><a href="#包：" class="headerlink" title="包："></a>包：</h2><p>1）概念：包在Python中定义为可以包含多个模块文件的目录，其中必须要包含一个名为“<strong>init</strong>.py”的文件，用来初始化包。<br>2）包在调用的使用，首先会初始化<strong>init</strong>.py文件，主要功能为包中模块运行时提供所需要的相关数据，比如：数据库用户名称、密码、地址等内容。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/02/py07_pack&py/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-py06_IOexcel&amp;xml" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -765,191 +914,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/07/19/py01_int/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-py01_str" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/19/py01_str/">基本数据类型--字符串</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/19/py01_str/" class="archive-article-date">
-  	<time datetime="2018-07-19T04:47:08.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容.<br>2、比较运算符：&gt;、&lt;、==、!=、&gt;=、&lt;=<br>他们的返回值为布尔型，即True或False,字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小.如果一旦出现一方的字母码值大于另一方，就结束比较.<br>提示：<br>在键盘上，所有的字符的ASCII码值都小于a,b,c…..这些字母的码值,只有这四个字符的ASCII码值大于字母z的码值：’{‘、’|’、’}’、’~’，它们的码值从123-126.<br>3、我们使用input()，允许进行交互式输入，默认input()输入的值类型为str字符串类型.</p>
-<h2 id="字符串常用的方法"><a href="#字符串常用的方法" class="headerlink" title="字符串常用的方法"></a>字符串常用的方法</h2><h3 id="1-find-查找"><a href="#1-find-查找" class="headerlink" title="1 find() 查找"></a>1 find() 查找</h3><p>函数格式：str.find(子字符串[,开始索引位，结束索引位]).<br>返回值：如果查找成功，则返回所查找内容在字符串中的索引位置，如果没有找到，返回-1.<br>注意：<br>如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位.<br>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ str1 = <span class="string">'hello'</span></span><br><span class="line">$ str1.find(<span class="string">'ll'</span>)</span><br><span class="line"></span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-<p>该例中，’ll’在字符串中出现了两次，但只会返回第一次出现的索引位置.<br>为什么查找时，没有找到目标字符串的情况下会返回-1.其实，在find操作中，会对字符串进行扫描从字符串的索引位0开始，一直到字符串结尾，如果在字符串最后一位没有找到匹配的内容，将指向字符串结束符(EOF)，该结束符为-1.所以找不到时，find返回值为-1.</p>
-<h3 id="更多用法："><a href="#更多用法：" class="headerlink" title="更多用法："></a>更多用法：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'apple,banana,apple,apple'</span></span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>)</span><br><span class="line">0</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,5)</span><br><span class="line">13</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,7,20)</span><br><span class="line">13</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,14,20)</span><br><span class="line">-1</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,14,24)</span><br><span class="line">19</span><br></pre></td></tr></table></figure>
-<p>对比：<br>index() 返回指定字符的索引位.<br>函数格式：index(子字符串[,开始索引位，结束索引位]).<br>返回值：如果找到指定的字符串，则返回其索引位；如果找不到就报错ValueError.<br>find()与index()函数的区别<br>(1)两者在执行结果时类似的，如果找到指定的字符就会返回其索引位.<br>(2)find()如果找不到指定的字符时，返回-1；而index()找不到指定的字符，raise ValueError.<br>(3)从效率上来讲，index的查询速度要优于find,因为在python中对于像字符串这样的有序数据类型，会产生一个索引对象来自动维护其序列，find()函数不管是否有这样的序列，都需要在字符串本身进行逐一查找，而index()会通过这个索引对象的映射方式，来快速找到对应的索引位.</p>
-<h3 id="2-split-拆分字符串"><a href="#2-split-拆分字符串" class="headerlink" title="2 split() 拆分字符串"></a>2 split() 拆分字符串</h3><p>函数格式：str.split([分隔符]).<br>返回值：根据指定的分隔符，对字符串进行拆分，返回一个列表；如果不指定分隔符，那么会将整个字符串，作为列表的一个元素.<br>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'tv,pc,notebook,phone'</span></span><br><span class="line">&gt;&gt;&gt; string1.split(<span class="string">','</span>)</span><br><span class="line">[<span class="string">'tv'</span>, <span class="string">'pc'</span>, <span class="string">'notebook'</span>, <span class="string">'phone'</span>]</span><br><span class="line">&gt;&gt;&gt; string1.split()</span><br><span class="line">[<span class="string">'tv,pc,notebook,phone'</span>]</span><br></pre></td></tr></table></figure>
-<p>注意：<br>split中的分隔符，我们根据字符串中的实际情况而定.如果使用了不正确的分隔符，str.split(‘错误分隔符’)操作结果str.split(),会将整个字符串作为列表的一个元素.</p>
-<h3 id="3-strip-字符串左右两端去除指定字符（默认情况，去除空格）"><a href="#3-strip-字符串左右两端去除指定字符（默认情况，去除空格）" class="headerlink" title="3 strip() 字符串左右两端去除指定字符（默认情况，去除空格）"></a>3 strip() 字符串左右两端去除指定字符（默认情况，去除空格）</h3><p>函数格式：str.strip([指定字符])<br>返回值：根据指定的字符，对字符串进行两端去除其内容，返回一个新的字符串.如果字符串中间有空格或指定字符，那么该函数不起作用.如果指定的字符在字符串左右两端不存在，那么将返回字符串本身.<br>例如：<br>缺省情况</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'  hello world  '</span></span><br><span class="line">&gt;&gt;&gt; string1.strip()</span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span>(string1)</span><br><span class="line">  hello world</span><br></pre></td></tr></table></figure>
-<p>指定字符</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'awelcom to zhengzhoua'</span></span><br><span class="line">&gt;&gt;&gt; string1.strip(<span class="string">'a'</span>)</span><br><span class="line"><span class="string">'welcom to zhengzhou'</span></span><br></pre></td></tr></table></figure>
-<p>注意：<br>(1)字符串类型，一旦被声明赋值后，其内容是不可被改变的，如果需要改变原字符串变量的值，必须对其进行重新赋值.<br>(2)如果指定字符内容为一个字符序列，那么意味着使用strip去除左右两端指定字符时，只要符合字符序列中的某一位，就进行去除</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">' awelcom to zhengzhouab'</span></span><br><span class="line">&gt;&gt;&gt; string1.strip(<span class="string">' ab'</span>)</span><br><span class="line"><span class="string">'welcom to zhengzhou'</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-replace-替换函数"><a href="#4-replace-替换函数" class="headerlink" title="4 replace()替换函数"></a>4 replace()替换函数</h3><p>函数格式：str.replace(old,new[,max])<br>返回值：将指定字符串（old）替换为新字符串（new）,最大可以替换max次.替换完成后，返回一个新字符串.<br>注意：<br>此处的max参数，主要用来指定替换的次数，如果该参数缺省，表示替换里面所有符合条件的字符串.<br>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'honor,oppo,vivo,apple,oppo,oppo'</span></span><br><span class="line">&gt;&gt;&gt; old_str = <span class="string">'oppo'</span></span><br><span class="line">&gt;&gt;&gt; new_str = <span class="string">'xiaomi'</span></span><br><span class="line">&gt;&gt;&gt; string1.replace(old_str, new_str)     <span class="comment"># 替换所有的oppo</span></span><br><span class="line"><span class="string">'honor,xiaomi,vivo,apple,xiaomi,xiaomi'</span></span><br><span class="line">&gt;&gt;&gt; string1.replace(old_str, new_str,2)   <span class="comment">#替换指定次数，即两处oppo</span></span><br><span class="line"><span class="string">'honor,xiaomi,vivo,apple,xiaomi,oppo'</span></span><br></pre></td></tr></table></figure>
-<h3 id="5-isalnum-、isalpha-、isdigit"><a href="#5-isalnum-、isalpha-、isdigit" class="headerlink" title="5 isalnum()、isalpha()、isdigit()"></a>5 isalnum()、isalpha()、isdigit()</h3><p>函数格式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str.isalnum()    判断字符串内容，是否有数字或字母组成</span><br><span class="line">str.isalpha()    判断字符串内容，是否由字母组成</span><br><span class="line">str.isdigit()    判断字符串内容，是否由数字组成</span><br></pre></td></tr></table></figure>
-<p>返回值：如果符合条件，返回True；如果不符合，返回False。</p>
-<h3 id="6-字符串运算符"><a href="#6-字符串运算符" class="headerlink" title="6 [] 字符串运算符"></a>6 [] 字符串运算符</h3><p>使用方法：str[索引位] =&gt; 返回指定索引位的字符，<br>索引位有两种表示方式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string1 = hello world</span><br><span class="line">第一种：string1[0] =&gt; h    到string1[10] =&gt; d</span><br><span class="line">第二种：string1[-1] =&gt; d   到string1[-11] =&gt; h</span><br></pre></td></tr></table></figure>
-<p>切片操作:<br>格式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str[start,end,step]</span><br><span class="line">start：代表切片开始的索引位</span><br><span class="line">end: 代表切片结束的索引位（但是不会输出该索引位指向的字符）</span><br><span class="line">step：代表每隔次几个字符个数截取一个</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">string1 = hello world</span><br><span class="line">string1[0:3] =&gt; hel   从索引位为0的字符开始，到索引位3结束，但不包括索引位3所指向的字符。</span><br><span class="line">string1[2:4] =&gt; ll</span><br><span class="line">string1[0:-1] =&gt; hello worl </span><br><span class="line">string1[0:8:2] =&gt; hlow</span><br><span class="line"></span><br><span class="line">str1[:]  =&gt; <span class="string">'hello world'</span> 等于将字符串进行复制</span><br><span class="line">str1[:5] =&gt; <span class="string">'hello'</span>       如果没有标明开始索引位，默认从0开始</span><br><span class="line">str1[::] =&gt; <span class="string">'hello world'</span>  等同于str1[:]</span><br><span class="line"></span><br><span class="line">使用步长，实现字符串反转</span><br><span class="line">string1[-1::-1]  =&gt;dlrow olleh    从索引位-1开始，一直到字符串结束，反向输出字符</span><br><span class="line">但是下列操作，会返回一个空字符串：</span><br><span class="line">string1[-1:4]  =&gt; <span class="string">''</span></span><br><span class="line">string1[-1:-5] =&gt; <span class="string">''</span></span><br></pre></td></tr></table></figure>
-<h3 id="7-连接符与重复操作符"><a href="#7-连接符与重复操作符" class="headerlink" title="7 连接符与重复操作符"></a>7 连接符与重复操作符</h3><p>+：在字符串中使用时，作为连接两个字符串，并返回一个新字符串的作用来使用。<br><em>：重复操作指定的次数，即将字符串重复输出N次。返回一个新字符串。<br>注意：在重复操作中，必须遵循：字符串</em>正整数这样的格式，如果数值不是正整数，其结果返回一个空字符串，如果不是数值类型，程序报错。<br>8）in运算符<br>用来检测指定的内容，是否在字符串中，如果存在则返回True，反之返回False<br>例如:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'hello world'</span></span><br><span class="line">&gt;&gt;&gt; substr = <span class="string">'e'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; substr = <span class="string">'ll'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">True</span><br><span class="line">substr = <span class="string">'wr'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/19/py01_str/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-py03_set" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/19/py03_set/">组合数据类型--set</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/19/py03_set/" class="archive-article-date">
-  	<time datetime="2018-07-19T01:29:44.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="集合-set"><a href="#集合-set" class="headerlink" title="集合(set)"></a>集合(set)</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h3><p>集合set是一个无序的数据集合，可以存储各种数据类型的元素，同时可以对集合中的元素进行新增、删除等操作，因此集合的长度是可变的。并且集合是不允许有重复元素，如果出现重复元素，除去第一个元素之外，都会被集合所忽略<br>注意：set是无序的，即存储元素到set的顺序与这些元素输出的顺序无关。set仍然是采用哈希算法，对这些元素进行存储的。</p>
-<h3 id="2-集合的声明与赋值"><a href="#2-集合的声明与赋值" class="headerlink" title="2 集合的声明与赋值"></a>2 集合的声明与赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1）set1 = &#123;1,2,3&#125;   生成一个集合</span><br><span class="line">2）set1 = <span class="built_in">set</span>(&#123;1,2,3&#125;)</span><br><span class="line">3) set1 = <span class="built_in">set</span>()   生成一个空集合，请注意集合只能通过<span class="built_in">set</span>()函数来生成空集合，而不是通过set1 = &#123;&#125;,这个表达式会生成一个空字典。</span><br></pre></td></tr></table></figure>
-<h3 id="3-数据类型转换"><a href="#3-数据类型转换" class="headerlink" title="3 数据类型转换"></a>3 数据类型转换</h3><p>字符串转成集合</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ string = <span class="string">'hello'</span></span><br><span class="line">$ set1 = <span class="built_in">set</span>(string)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">'h'</span>, <span class="string">'e'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>列表转成集合</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ list1 = [1,2,3]</span><br><span class="line">$ set1 = <span class="built_in">set</span>(list1)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3&#125;</span><br></pre></td></tr></table></figure>
-<p>元组转成集合</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ tup = (1,2,3)</span><br><span class="line">$ set1 = <span class="built_in">set</span>(tup)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-集合的操作"><a href="#4-集合的操作" class="headerlink" title="4 集合的操作"></a>4 集合的操作</h3><p>1）元素的增加 add()<br>函数格式：set.add(元素)<br>返回值：无返回值<br>结果：集合元素增加一个<br>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;1, 2, 3&#125;</span><br><span class="line">$ set1.add(4)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
-<p>2）元素的删除<br>第一、remove()<br>函数格式：set.remove(元素)<br>返回值：无返回值<br>结果：集合指定的元素被删除</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">set</span> = &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line">$ set1.remove(5)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
-<p>第二、discard()<br>函数格式：set.discard(元素)<br>返回值：无返回值<br>结果：集合中指定的元素被删除</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">set</span> = &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line">$ set1.discard(5)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：上面两个方法，如果删除一个不存在的元素，其中remove()会报错，而discar()无反应<br>第三、clear() 清空集合中所有的元素<br>函数格式：set.clear()<br>返回值：无返回值<br>结果：清空集合中所有的元素<br>set.clear()<br>第四、del命令 删除集合，并释放其所占内存资源<br>del set</p>
-<h3 id="5-集合运算"><a href="#5-集合运算" class="headerlink" title="5 集合运算"></a>5 集合运算</h3><p>1）并集运算 (|)或union()<br>两个集合进行并集运算，即将两个集合中的元素都合并到一个新的集合中，重复的元素只出现一次。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1 | set2 或</span><br><span class="line">$ set1.union(set2)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'jp'</span>, <span class="string">'tw'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>2）交集运算 （&amp;）或intersection()<br>两个集合进行交集运算，即将两个集合中相同的元素合并到一个新的集合中。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1 &amp; set2 或</span><br><span class="line">$ set1.intersection(set2)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>3)差集运算（-）或difference()<br>两个集合进行差集运算，即运算符左边的集合，与运算右边的集合进行差运算，相当于使用左边集合去除与右边集合相同的元素。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1 - set2 或</span><br><span class="line">$ set1.difference(set2)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 - set1 或</span><br><span class="line">$ set2.difference(set1)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>4)对称差运算（^）或者symmetric_difference()<br>两个集合进行对称差运算，即两个集合中除去相同元素，其他所有元素重新归并到一个新集合中。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line"></span><br><span class="line">$ set2 ^ set1 或</span><br><span class="line">$ set1.symmetric_difference(set2)</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>,<span class="string">'jp'</span>, <span class="string">'fr'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>5)子集与超集（父集）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ subset = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>我们通过观察可以看到，subset中的内容，属于set1的一部分。因此，</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ subset = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br><span class="line">$ subset.issubset(set1)</span><br><span class="line"></span><br><span class="line">True</span><br></pre></td></tr></table></figure>
-<p>表示，subset是set1集合的一个子集合<br>同理，我们也可以说，set1是subset的父集合</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ subset = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br><span class="line">$ set1.issuperset(subset)</span><br><span class="line"></span><br><span class="line">True</span><br></pre></td></tr></table></figure>
-<p>6、集合常用函数<br>1）update()<br>函数格式：set1.update(set2)<br>返回值：无<br>结果：我们将set2中的元素，添加到set1中，如果有相同的元素只保留一个。同时，该操作会修改set1的元素数量。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1.update(set2)</span><br><span class="line">$ set1</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'jp'</span>, <span class="string">'tw'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>2)intersection_update()<br>函数格式：set1.intersection_update(set2)<br>返回值：无<br>结果：我们使用set2中的元素，添加到set1中，其中，保留两个集合中相同的元素。其中，set1、set2中其他的元素被舍弃。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1.intersection_update(set2)</span><br><span class="line">$ set1</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>3）symmetric_difference_update()<br>函数格式：symmetric_difference_update()<br>返回值：无<br>结果：我们使用set1与set2进行运算，只保留两者除去相同元素之外的元素。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ set1 = &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set2 = &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">$ set1.symmetric_difference_update(set2)</span><br><span class="line">$ set1</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/19/py03_set/">展开全文 >></a>
         </p>
       
 

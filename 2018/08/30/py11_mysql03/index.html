@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 老阳的技术博客</title>
+  <title>MYSQL--查询 | 老阳的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老阳的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+  <meta name="description" content="1）单表查询查询语句的格式 1234567select 字段1，字段2，字段3，....，字段n         6from 表名                 1where 条件子句            2group by 分组子句         3having 条件子句           4order by 排序子句         5limit 分页子句 例如：select  fro">
+<meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MYSQL--查询">
+<meta property="og:url" content="http://yoursite.com/2018/08/30/py11_mysql03/index.html">
 <meta property="og:site_name" content="老阳的技术博客">
+<meta property="og:description" content="1）单表查询查询语句的格式 1234567select 字段1，字段2，字段3，....，字段n         6from 表名                 1where 条件子句            2group by 分组子句         3having 条件子句           4order by 排序子句         5limit 分页子句 例如：select  fro">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-30T00:52:49.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老阳的技术博客">
+<meta name="twitter:title" content="MYSQL--查询">
+<meta name="twitter:description" content="1）单表查询查询语句的格式 1234567select 字段1，字段2，字段3，....，字段n         6from 表名                 1where 条件子句            2group by 分组子句         3having 条件子句           4order by 排序子句         5limit 分页子句 例如：select  fro">
   
     <link rel="alternative" href="/atom.xml" title="老阳的技术博客" type="application/atom+xml">
   
@@ -155,214 +159,212 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-py11_mysql03" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MYSQL--查询
+    </h1>
+  
+
+        
+        <a href="/2018/08/30/py11_mysql03/" class="archive-article-date">
+  	<time datetime="2018-08-30T00:44:00.425Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1）单表查询"><a href="#1）单表查询" class="headerlink" title="1）单表查询"></a>1）单表查询</h2><p>查询语句的格式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select 字段1，字段2，字段3，....，字段n         6</span><br><span class="line">from 表名                 1</span><br><span class="line"><span class="built_in">where</span> 条件子句            2</span><br><span class="line">group by 分组子句         3</span><br><span class="line">having 条件子句           4</span><br><span class="line">order by 排序子句         5</span><br><span class="line"><span class="built_in">limit</span> 分页子句</span><br></pre></td></tr></table></figure>
+<p>例如：select <em> from person<br>该语句中，</em>代表了表中所有的字段，但是我们日常开发中，不允许这样使用。一定要明确的标出需要查询的相关字段名。这有有利于在查询时减少数据库在查询表时不必要的字段检索。</p>
+<p>关系运算与逻辑运算<br>逻辑与 and</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select pno, pname, age, hire_date, salary from persons <span class="built_in">where</span> hire_date&gt;=<span class="string">'2018-03-01'</span> and hire_date&lt;=<span class="string">'2018-04-30'</span>;</span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select pno, pname, age, hire_date, salary from persons <span class="built_in">where</span> hire_date between <span class="string">'2018-03-01'</span> and <span class="string">'2018-04-30'</span>;</span><br></pre></td></tr></table></figure>
+<p>第二种写法的效率会更优。因为采用了关系表达式，使用一次比较实现条件。</p>
+<p>逻辑或 or</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select pno, pname, age, hire_date, salary from persons <span class="built_in">where</span> salary=3459 or salary = 3400;</span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select pno, pname, age, hire_date, salary from persons <span class="built_in">where</span> salary <span class="keyword">in</span>(3459,3400);</span><br></pre></td></tr></table></figure>
+<p>逻辑非 not</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select pno, pname, age, hire_date, salary from persons <span class="built_in">where</span> hire_date NOT between <span class="string">'2018-03-01'</span> and <span class="string">'2018-04-30'</span>;</span><br></pre></td></tr></table></figure>
+<p>排序子句：order by（排序子句一定要放在所有子句之后）<br>sql中排序分为升序与降序，默认情况下为升序，如果要使用降序采用desc关键字。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select pno, pname, age, hire_date, salary from persons order by salary desc;</span><br></pre></td></tr></table></figure>
+<p>注意，如果出现多个排序条件时，表示为先按照第一个排序条件进行排序，如果出现相同的排序字段内容时，再按照第二个排序条件进行排序，依次类推。多个排序条件之间，用,号隔开。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select pno, pname, age, hire_date, salary from persons order by salary desc, hire_date;</span><br></pre></td></tr></table></figure>
+<p>分组子句：group by<br>如果SQL中使用了分组子句，那么在select子句里面，只能使用分组字段或者是统计函数。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select age,count(age) from persons group by age;</span><br></pre></td></tr></table></figure>
+<p>注意：通常情况下分组子句会结合统计函数一起使用。</p>
+<p>having条件子句<br>having子句通常是配合group子句一起使用，having将统计函数作为其条件字段。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select age,count(age) from persons group by age having count(age)&gt;1;</span><br></pre></td></tr></table></figure>
+<p>limit子句：分页子句<br>limit 开始的行号（第一行为0）,显示几条记录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from persons <span class="built_in">limit</span> 0,1;</span><br></pre></td></tr></table></figure>
+<p>distinct去重：<br>去除指定字段中的重复内容，只保留一个。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct salary from persons;</span><br></pre></td></tr></table></figure>
+<p>列表名与表别名<br>列别名：给指定的列，起别名。可以使用as关键字。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 列名 [as] 别名 from 表名</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select pno as <span class="string">'编号'</span> from persons;</span><br></pre></td></tr></table></figure>
+<p>表别名：给指定的表，起别名。使用as关键字修饰。</p>
+<p>统计函数：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">count():统计个数</span><br><span class="line">max()：求最大值</span><br><span class="line">min()：求最小值</span><br><span class="line">avg()：求平均值</span><br><span class="line">sum()：求和</span><br></pre></td></tr></table></figure>
+<p>注意，在使用统计函数时，如果没有配合group by子句使用，那么在select中只能输出统计函数的值，不能输出其他字段。例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select max(salary) from persons;</span><br></pre></td></tr></table></figure>
+<p>其中，max、min、avg、sum只能统计数据类型是数值型的字段，如果该字段值为null，那么统计函数将忽略该内容。我们可以通过ifnull(字段，替换值)，将null值转换为我们指定的值，进而参加相关的统计运算。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select avg(ifnull(salary,0)) from persons;</span><br></pre></td></tr></table></figure>
+<p>模糊查询：like<br>我们通常在查询时，如果条件内容不是非常明确的情况下，我们会使用like关键字进行模糊查询。通常会使用%、<em>来配合，其中%代表了0到n个字符，</em>代表了1个字符。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from persons <span class="built_in">where</span> pname like <span class="string">'_i%'</span>;查找名字第二位是i的人员信息</span><br><span class="line">select * from persons <span class="built_in">where</span> pname like <span class="string">'%i%'</span>;查找名字中有i的人员信息</span><br></pre></td></tr></table></figure>
+<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><p>1、查询分类<br>内连接（等值连接）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inner join</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select e.empno,e.ename,e.sal,e.deptno,d.dname from emp e inner join dept d on e.deptno=d.deptno <span class="built_in">where</span> e.sal&gt;2000;</span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select e.empno,e.ename,e.sal,e.deptno,d.dname from emp e, dept d <span class="built_in">where</span> e.deptno=d.deptno and e.sal&gt;2000;</span><br></pre></td></tr></table></figure>
+<p>外连接<br>分为左外连接与右外连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">left join on</span><br><span class="line">right join on</span><br></pre></td></tr></table></figure>
+<p>何时使用外连接？<br>当进行两个表连接查询时，其中一方有不匹配记录，如果进行等值连接这些记录将不会被查询检索，如果我们需要查询时将匹配记录以及不匹配记录都查询出来，就需要使用外连接。那么不匹配记录存在的表位于连接语句的左侧，就使用左外连接，如果出现在右侧就使用右外连接。<br>例如：其中dept表中有不匹配的记录，deptno=40的记录。<br>左外连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select e.empno,e.ename,d.deptno,d.dname from  dept d left join emp e on e.deptno=d.deptno;</span><br></pre></td></tr></table></figure>
+<p>右外连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select e.empno,e.ename,d.deptno,d.dname from emp e right join dept d on e.deptno=d.deptno;</span><br></pre></td></tr></table></figure>
+<p>子查询<br>概念：将一个SQL查询语句的返回结果，作为另外一个查询语句的条件来使用。<br>分为单行子查询与多行子查询</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">单行子查询：作为条件返回的查询语句，其返回结果为一行记录。</span><br><span class="line">多行子查询：作为条件返回的查询语句，其返回结果为多行记录。</span><br></pre></td></tr></table></figure>
+<h2 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h2><p>行变列</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,max(<span class="keyword">case</span> course when <span class="string">'math'</span> <span class="keyword">then</span> score <span class="keyword">else</span> 0 end) <span class="string">'数学'</span>,max(<span class="keyword">case</span> course when <span class="string">'english'</span> <span class="keyword">then</span> score <span class="keyword">else</span> 0 end) <span class="string">'英语'</span>,max(<span class="keyword">case</span> course when <span class="string">'chinese'</span> <span class="keyword">then</span> score <span class="keyword">else</span> 0 end ) <span class="string">'语文'</span> from grade group by name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> Field  | Type        | Null | Key | Default | Extra          |</span><br><span class="line">+--------+-------------+------+-----+---------+----------------+</span><br><span class="line">| id     | int(11)     | NO   | PRI | NULL    | auto_increment |</span><br><span class="line">| name   | varchar(20) | YES  |     | NULL    |                |</span><br><span class="line">| course | varchar(10) | YES  |     | NULL    |                |</span><br><span class="line">| score  | int(3)      | YES  |     | NULL    |</span><br></pre></td></tr></table></figure>
+<p>列变行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name,<span class="string">'math'</span> course,math_score as score from grade2 union select name,<span class="string">'english'</span> course,en_score as score from grade2 union select name,<span class="string">'chinese'</span> course,cn_score as score from grade2 order by name,course;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">------------+-------------+------+-----+---------+----------------+</span><br><span class="line">| Field      | Type        | Null | Key | Default | Extra          |</span><br><span class="line">+------------+-------------+------+-----+---------+----------------+</span><br><span class="line">| id         | int(11)     | NO   | PRI | NULL    | auto_increment |</span><br><span class="line">| name       | varchar(10) | YES  |     | NULL    |                |</span><br><span class="line">| math_score | int(3)      | YES  |     | NULL    |                |</span><br><span class="line">| en_score   | int(3)      | YES  |     | NULL    |                |</span><br><span class="line">| cn_score   | int(3)      | YES  |     | NULL    |                |</span><br><span class="line">+------------+-------------+------+-----+---------+----------------+</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/py01_str/" class="archive-article-date">
-  	<time datetime="2018-07-19T04:47:08.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/py01_str/">基本数据类型--字符串</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/30/py11_mysql03/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/py03_set/" class="archive-article-date">
-  	<time datetime="2018-07-19T01:29:44.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/30/py11_mysql02/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MYSQL--数据操作语言</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/py03_set/">组合数据类型--set</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/py03_dict/" class="archive-article-date">
-  	<time datetime="2018-07-19T01:17:18.698Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/py03_dict/">组合数据类型--dict</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/py03_list&tuple/" class="archive-article-date">
-  	<time datetime="2018-07-17T13:32:30.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/py03_list&tuple/">组合数据类型--list&amp;tuple</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/py02_github/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:41:18.997Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/py02_github/">关于重装系统之后恢复github的操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/py02_if&for&while/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:26:37.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/py02_if&for&while/">控制语句--条件&amp;循环</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/py01_Integral/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:26:37.704Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/py01_Integral/">常量&amp;变量</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
   
 
 
@@ -386,8 +388,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

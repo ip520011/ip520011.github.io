@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 老阳的技术博客</title>
+  <title>MYSQL--数据操作语言 | 老阳的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
-<meta property="og:type" content="website">
-<meta property="og:title" content="老阳的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+  <meta name="description" content="1）数据类型间的默认转换字符串=&amp;gt;日期型如果字段数据类型定义为日期型，例如：date（YYYY-MM-DD），如果我们队该字段插入数据时，采用’2018-08-23’的字符串格式进行数据插入，mysql会自动将字符串转为日期型。 字符串=&amp;gt;数值型当字段数据类型为字符型时，但具体值为数值，我们使用该字段的值与数值进行运算，那么得到的结果为数值型。同时，如果字段类型定义为数值型，我们可以将">
+<meta name="keywords" content="Python、爬虫、Web开发、数据分析、人工智能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MYSQL--数据操作语言">
+<meta property="og:url" content="http://yoursite.com/2018/08/30/py11_mysql02/index.html">
 <meta property="og:site_name" content="老阳的技术博客">
+<meta property="og:description" content="1）数据类型间的默认转换字符串=&amp;gt;日期型如果字段数据类型定义为日期型，例如：date（YYYY-MM-DD），如果我们队该字段插入数据时，采用’2018-08-23’的字符串格式进行数据插入，mysql会自动将字符串转为日期型。 字符串=&amp;gt;数值型当字段数据类型为字符型时，但具体值为数值，我们使用该字段的值与数值进行运算，那么得到的结果为数值型。同时，如果字段类型定义为数值型，我们可以将">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-30T00:53:31.166Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老阳的技术博客">
+<meta name="twitter:title" content="MYSQL--数据操作语言">
+<meta name="twitter:description" content="1）数据类型间的默认转换字符串=&amp;gt;日期型如果字段数据类型定义为日期型，例如：date（YYYY-MM-DD），如果我们队该字段插入数据时，采用’2018-08-23’的字符串格式进行数据插入，mysql会自动将字符串转为日期型。 字符串=&amp;gt;数值型当字段数据类型为字符型时，但具体值为数值，我们使用该字段的值与数值进行运算，那么得到的结果为数值型。同时，如果字段类型定义为数值型，我们可以将">
   
     <link rel="alternative" href="/atom.xml" title="老阳的技术博客" type="application/atom+xml">
   
@@ -155,214 +159,182 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-py11_mysql02" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MYSQL--数据操作语言
+    </h1>
+  
+
+        
+        <a href="/2018/08/30/py11_mysql02/" class="archive-article-date">
+  	<time datetime="2018-08-30T00:39:51.780Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-30</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1）数据类型间的默认转换"><a href="#1）数据类型间的默认转换" class="headerlink" title="1）数据类型间的默认转换"></a>1）数据类型间的默认转换</h2><p>字符串=&gt;日期型<br>如果字段数据类型定义为日期型，例如：date（YYYY-MM-DD），如果我们队该字段插入数据时，采用’2018-08-23’的字符串格式进行数据插入，mysql会自动将字符串转为日期型。</p>
+<p>字符串=&gt;数值型<br>当字段数据类型为字符型时，但具体值为数值，我们使用该字段的值与数值进行运算，那么得到的结果为数值型。<br>同时，如果字段类型定义为数值型，我们可以将数值型字符串插入到指定的字段中。<br>如果，字段类型为字符型，其中由字符与数字混合组成（只要不是纯数字构成的字符串），此时与数值进行算数运算，那么该字段内容被转换为0来进行处理。</p>
+<h2 id="2）运算符"><a href="#2）运算符" class="headerlink" title="2）运算符"></a>2）运算符</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">算数运算符</span><br><span class="line">比较运算符</span><br><span class="line">逻辑运算符</span><br><span class="line">位运算符</span><br></pre></td></tr></table></figure>
+<h2 id="3）插入数据"><a href="#3）插入数据" class="headerlink" title="3）插入数据"></a>3）插入数据</h2><p>标准格式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名（字段1，字段2，字段3，....） values(字段1值，字段2值，字段3值，...)</span><br><span class="line">insert into persons(pno,pname,age,hire_date,salary) values(<span class="string">'10001'</span>,<span class="string">'tom'</span>,21,<span class="string">'2018-03-12'</span>,3459);</span><br></pre></td></tr></table></figure>
+<p>通常，我们在声明表名的时候将需要插入数据的字段名一起进行声明，有利于提高插入的效率。同时如果有些字段值为null，可以在实际插入的时候省略。另外，字段值只需要与字段名称对应即可，不需要按照表中实际字段的位置进行填写。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 values(字段1值，字段2值，字段3值，...)</span><br></pre></td></tr></table></figure>
+<p>这种写法，需要我们在values的后面，按照表中各个字段的实际顺序进行一一对应的填写。同时，如果某个字段的值为null，也必须将null值进行标明。</p>
+<p>插入多条语句：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名（字段名） values(字段值1,...，字段值n)，(字段值1,...，字段值n)</span><br></pre></td></tr></table></figure>
+<p>一次性插入多条数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into person_bak(pno,pname,age,hire_date,salary) select * from persons;</span><br></pre></td></tr></table></figure>
+<p>将指定表的查询结果，作为要插入到目标表中的数据，进行插入。要求是目标表结构与指定表的结构相同。</p>
+<h2 id="4）、更新数据"><a href="#4）、更新数据" class="headerlink" title="4）、更新数据"></a>4）、更新数据</h2><p>格式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 表名 <span class="built_in">set</span> 字段1=新值，字段2=新值，...，字段n=新值 <span class="built_in">where</span> 条件</span><br></pre></td></tr></table></figure>
+<p>进行更新操作时，一定要进行条件的约束，如果该语句没有条件子句的话，就表示对全表进行更新操作。</p>
+<h2 id="5）、删除数据"><a href="#5）、删除数据" class="headerlink" title="5）、删除数据"></a>5）、删除数据</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名 <span class="built_in">where</span> 条件</span><br></pre></td></tr></table></figure>
+<p>进行删除操作时，一定要添加条件，如果没有条件子句，就意味着删除全表内容。</p>
+<h2 id="6）、数据操作的撤销和提交"><a href="#6）、数据操作的撤销和提交" class="headerlink" title="6）、数据操作的撤销和提交"></a>6）、数据操作的撤销和提交</h2><p>mysql数据库默认模式为自动提交：autocommit=on<br>我们如果需要对mysql进行撤销和提交操作，需要先将默认的自动提交模式取消，设置为off<br>即：set autocommit=off<br>当我们进行增删改操作时，如果执行rollback操作，那么该操作就会被撤销；<br>如果执行commit操作，那么该操作就会持久化到数据库中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">commit</span><br><span class="line">rollback</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/py01_str/" class="archive-article-date">
-  	<time datetime="2018-07-19T04:47:08.014Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/py01_str/">基本数据类型--字符串</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/30/py11_mysql02/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/py03_set/" class="archive-article-date">
-  	<time datetime="2018-07-19T01:29:44.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/08/30/py11_mysql03/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MYSQL--查询
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/27/py11_mysql01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql--数据定义语言</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/py03_set/">组合数据类型--set</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/19/py03_dict/" class="archive-article-date">
-  	<time datetime="2018-07-19T01:17:18.698Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/19/py03_dict/">组合数据类型--dict</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/py03_list&tuple/" class="archive-article-date">
-  	<time datetime="2018-07-17T13:32:30.214Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/py03_list&tuple/">组合数据类型--list&amp;tuple</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/py02_github/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:41:18.997Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/py02_github/">关于重装系统之后恢复github的操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/py02_if&for&while/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:26:37.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/py02_if&for&while/">控制语句--条件&amp;循环</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/14/py01_Integral/" class="archive-article-date">
-  	<time datetime="2018-07-14T08:26:37.704Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/14/py01_Integral/">常量&amp;变量</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
   
 
 
@@ -386,8 +358,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
